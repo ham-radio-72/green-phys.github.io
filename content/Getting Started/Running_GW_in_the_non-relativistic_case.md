@@ -33,45 +33,48 @@ and
 
 will give you a complete overview of all allowed parameters. Here is an
 example of a sample GW parameter file:
-
-`nel_cell=8`
-`nao=26`
-`nk=216`
-`ink=112`
-`ns=2`
-`mu=0`
-`NQ=36`
-`itermax=30`
-`scf_type=GW`
-`CONST_DENSITY=true`
-`E_thr=1e-5`
-`damp=0.3`
-`max_trust_rad=100000`
-`new_DIIS=true`
-`com_DIIS=true`
-`DIIS_size=5`
-`DIIS_start=3`
-`rst=true`
-`mulliken=true`
+```
+nel_cell=8
+nao=26
+nk=216
+ink=112
+ns=2
+mu=0
+NQ=36
+itermax=30
+scf_type=GW
+CONST_DENSITY=true
+E_thr=1e-5
+damp=0.3
+max_trust_rad=100000
+new_DIIS=true
+com_DIIS=true
+DIIS_size=5
+DIIS_start=3
+rst=true
+mulliken=true
+```
 
 ...and here is an example of a sample invocation on the command line:
 
-`srun -v $BinDir/UGF2  ${param_file} --TNL=${tempdir}/1e7_202.h5 \`
-`                                           --TNL_B=${tempdir}/1e7_202.h5 \`
-`                                           --ni=202 \`
-`                                           --nt_batch=204 \`
-`                                           --IR=true \`
-`                                           --input_file=${input_file} \`
-`                                           --dfintegral_file=${tempdir}/df_int \`
-`                                           --HF_dfintegral_file=${tempdir}/df_hf_int \`
-`                                           --Results sim.h5 \`
-`                                           --scf_type cuGW \`
-`                                           --ntauspinprocs=1 \`
-`                                           --programs=SC \`
-`                                           --beta 100 \`
-`                                           --cuda_low_cpu_memory=false \`
-`                                           --cuda_low_gpu_memory=false \`
-`                                           --single_prec=1`
+```
+srun -v $BinDir/UGF2  ${param_file} --TNL=${tempdir}/1e7_202.h5 \
+                                           --TNL_B=${tempdir}/1e7_202.h5 \
+                                           --ni=202 \
+                                           --nt_batch=204 \
+                                           --IR=true \
+                                           --input_file=${input_file} \
+                                           --dfintegral_file=${tempdir}/df_int \
+                                           --HF_dfintegral_file=${tempdir}/df_hf_int \
+                                           --Results sim.h5 \
+                                           --scf_type cuGW \
+                                           --ntauspinprocs=1 \
+                                           --programs=SC \
+                                           --beta 100 \
+                                           --cuda_low_cpu_memory=false \
+                                           --cuda_low_gpu_memory=false \
+                                           --single_prec=1
+```
 
 Note that you can shuffle commands arbitrarily from the command line to
 the parameter file and back.
@@ -112,89 +115,99 @@ submits a GPU job to run in single precision.
 First part: SLURM header. Make sure you get to the right partition,
 allocate the right memory size, use the correct number of cores, etc.
 
-`#!/bin/bash`
-`#SBATCH --account=egull0`
-`#SBATCH --job-name=Si_GPU`
-`#SBATCH --partition=gpu`
-`#SBATCH --gpus=2`
-`#SBATCH --time=06:00:00`
-`#SBATCH --nodes=1`
-`#SBATCH --tasks-per-node=40`
-`#SBATCH --output=Si_GPU_GW.o%j`
-`#SBATCH --error=Si_GPU_GW.e%j`
-`#SBATCH --mem=180g`
-`#SBATCH --exclusive`
+```
+#!/bin/bash
+#SBATCH --account=egull0
+#SBATCH --job-name=Si_GPU
+#SBATCH --partition=gpu
+#SBATCH --gpus=2
+#SBATCH --time=06:00:00
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=40
+#SBATCH --output=Si_GPU_GW.o%j
+#SBATCH --error=Si_GPU_GW.e%j
+#SBATCH --mem=180g
+#SBATCH --exclusive
+```
 
 Second part: Load the modules and set the environment variables. Setting
 OMP_NUM_THREAD=1 unless you use OpenMP is always a good idea in case a
 library, such as BLAS or LAPACK, uses OpenMP.
 
-`module load cuda`
-`#OpenMP settings:`
-`export OMP_NUM_THREADS=1`
-`export HDF5_USE_FILE_LOCKING=FALSE`
+```
+module load cuda
+#OpenMP settings:
+export OMP_NUM_THREADS=1
+export HDF5_USE_FILE_LOCKING=FALSE
 
 Third part: set environment variables for the location of your input
 files, output files, and IR coefficients.
 
-`BinDir=/home/egull/Projects/UGF2/build`
-`integral_dir=/nfs/turbo/lsa-egull/egull/Si_GPU/pySCF_666`
-`ir_coeff_dir=/nfs/turbo/lsa-egull/egull/ir_coeffs`
-`run_dir=/nfs/turbo/lsa-egull/egull/Si_GPU/cuGW_singleprec/`
+BinDir=/home/egull/Projects/UGF2/build
+integral_dir=/nfs/turbo/lsa-egull/egull/Si_GPU/pySCF_666
+ir_coeff_dir=/nfs/turbo/lsa-egull/egull/ir_coeffs
+run_dir=/nfs/turbo/lsa-egull/egull/Si_GPU/cuGW_singleprec/
 
-`param_file=${run_dir}/gw_param`
-`input_file=${integral_dir}/input.h5`
+param_file=${run_dir}/gw_param
+input_file=${integral_dir}/input.h5
+```
 
 Fourth part: start setting up the environment. Call nvidia-smi to see
 what GPUs are available.
 
-`date`
-`nvidia-smi`
+```
+date
+nvidia-smi
 
-`if [ $# -lt 2 ]; then`
-`  echo "please specify beta and sc type..."`
-`  exit -1`
-`fi`
+if [ $# -lt 2 ]; then
+  echo "please specify beta and sc type..."
+  exit -1
+fi
 
-`cd ${run_dir}`
+cd ${run_dir}
+```
 
 5th part: cache data on a local fast nvme drive, if such a drive is
 available. Adjust the location and the pattern. The 'trap' command
 ensures that the files are deleted once you're done.
 
-`#create scratch dir for fast access`
-`scratch_base=/scratch/egull_root/egull0/egull/`
-`template=Si_GPU_XXXXXX`
-`tempdir=$(mktemp -d $scratch_base/$template)`
+```
+#create scratch dir for fast access
+scratch_base=/scratch/egull_root/egull0/egull/
+template=Si_GPU_XXXXXX
+tempdir=$(mktemp -d $scratch_base/$template)
 
-`date`
-`echo "prestage to" $tempdir`
-`cp ${ir_coeff_dir}/1e7_202.h5 $tempdir`
-`cp -r ${integral_dir}/df_int $tempdir`
-`cp -r ${integral_dir}/df_hf_int $tempdir`
-`ls -lh $tempdir`
-`du -h $tempdir`
-`echo "done with prestage to" $tempdir`
-`trap 'rm -rf -- "$tempdir"' EXIT`
-`date`
+date
+echo "prestage to" $tempdir
+cp ${ir_coeff_dir}/1e7_202.h5 $tempdir
+cp -r ${integral_dir}/df_int $tempdir
+cp -r ${integral_dir}/df_hf_int $tempdir
+ls -lh $tempdir
+du -h $tempdir
+echo "done with prestage to" $tempdir
+trap 'rm -rf -- "$tempdir"' EXIT
+date
+```
 
 6th part: run the GW code until convergence!
 
-`#running the job`
-`srun -v $BinDir/UGF2  ${param_file} --TNL=${tempdir}/1e7_202.h5 \`
-`                                           --TNL_B=${tempdir}/1e7_202.h5 \`
-`                                           --ni=202 \`
-`                                           --nt_batch=204 \`
-`                                           --IR=true \`
-`                                           --input_file=${input_file} \`
-`                                           --dfintegral_file=${tempdir}/df_int \`
-`                                           --HF_dfintegral_file=${tempdir}/df_hf_int \`
-`                                           --Results sim.h5 \`
-`                                           --scf_type ${2} \`
-`                                           --ntauspinprocs=1 \`
-`                                           --programs=SC \`
-`                                           --beta ${1} \`
-`                                           --cuda_low_cpu_memory=false \`
-`                                           --cuda_low_gpu_memory=false \`
-`                                           --single_prec=1`
-`date`
+```
+#running the job
+srun -v $BinDir/UGF2  ${param_file} --TNL=${tempdir}/1e7_202.h5 \
+                                           --TNL_B=${tempdir}/1e7_202.h5 \
+                                           --ni=202 \
+                                           --nt_batch=204 \
+                                           --IR=true \
+                                           --input_file=${input_file} \
+                                           --dfintegral_file=${tempdir}/df_int \
+                                           --HF_dfintegral_file=${tempdir}/df_hf_int \
+                                           --Results sim.h5 \
+                                           --scf_type ${2} \
+                                           --ntauspinprocs=1 \
+                                           --programs=SC \
+                                           --beta ${1} \
+                                           --cuda_low_cpu_memory=false \
+                                           --cuda_low_gpu_memory=false \
+                                           --single_prec=1
+date
+```

@@ -11,7 +11,7 @@ code.
 
 We have two recordings of the talk. Zoom version:
 
-<youtube><https://youtu.be/mPPAuWUr_w0></youtube>
+{{< youtube id="mPPAuWUr_w0" >}}
 
 Second recording of the talk, room version:
 

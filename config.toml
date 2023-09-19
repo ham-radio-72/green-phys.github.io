@@ -1,7 +1,8 @@
 baseURL = 'https://green-phys.org/'
 languageCode = 'en-us'
 title = 'Green: Embedding Framework for Quantum Many-Body simulations'
-theme = 'relearn'
+theme = 'hugo-theme-relearn'
+# disablePathToLower = true
 
 
 # For search functionality
@@ -45,7 +46,7 @@ home = [ "HTML", "RSS", "JSON"]
   disableShortcutsTitle = false
   # If set to false, a Home button will appear below the search bar on the menu.
   # It is redirecting to the landing page of the current language if specified. (Default is "/")
-  disableLandingPageButton = false
+  disableLandingPageButton = true
   # When using mulitlingual website, disable the switch language button.
   disableLanguageSwitchingButton = false
   # Hide breadcrumbs in the header and only show the current page title
@@ -69,7 +70,7 @@ home = [ "HTML", "RSS", "JSON"]
   # Specifies the remote location of the swagger-ui js
   customOpenapiURL = "https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"
   # Hide Next and Previous page buttons displayed in topbar
-  disableNextPrev = true
+  disableNextPrev = false
   # Order sections in menu by "weight" or "title". Default to "weight";
   # this can be overridden in the pages frontmatter
   ordersectionsby = "weight"
