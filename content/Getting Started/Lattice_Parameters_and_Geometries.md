@@ -27,15 +27,35 @@ three unit cell vectors as a 3x3 matrix. Check your favorite textbook
 for instructions; for instance in a simple cubic lattice the vectors (in
 units of the lattice spacing a) are
 
-$$a_1=\begin{pmatrix}1&0&0\end{pmatrix}\\\\a_2=\begin{pmatrix}0&1&0\end{pmatrix}\\\\a_3=\begin{pmatrix}0&0&1\end{pmatrix}$$
+```math
+$$
+\displaylines{
+ a_1=\begin{pmatrix}1&0&0\end{pmatrix} \\
+ a_2=\begin{pmatrix}0&1&0\end{pmatrix} \\
+ a_3=\begin{pmatrix}0&0&1\end{pmatrix}
+ }
+ $$
+```
 
 In a body-centered cubic system they would be
 
-$a_1=\begin{pmatrix}1/2&1/2&-1/2\end{pmatrix}\\\\a_2=\begin{pmatrix}-1/2&1/2&1/2\end{pmatrix}\\\\a_3=\begin{pmatrix}1/2&-1/2&1/2\end{pmatrix}$
+```math
+$$ \displaylines{
+a_1=\begin{pmatrix}1/2&1/2&-1/2\end{pmatrix}\\
+a_2=\begin{pmatrix}-1/2&1/2&1/2\end{pmatrix}\\
+a_3=\begin{pmatrix}1/2&-1/2&1/2\end{pmatrix}
+}$$
+```
 
 ...and in an fcc lattice they would be
 
-$a_1=\begin{pmatrix}1/2&1/2&0\end{pmatrix}\\\\a_2=\begin{pmatrix}0&1/2&1/2\end{pmatrix}\\\\a_3=\begin{pmatrix}1/2&0&1/2\end{pmatrix}$
+```math
+$$\displaylines{
+a_1=\begin{pmatrix}1/2&1/2&0\end{pmatrix}\\
+a_2=\begin{pmatrix}0&1/2&1/2\end{pmatrix}\\
+a_3=\begin{pmatrix}1/2&0&1/2\end{pmatrix}
+}$$
+```
 
 Note that the conventional unit cell is often much larger, so make sure
 to take the primitive cell. Also note that anti-ferromagnetic order will
@@ -90,7 +110,7 @@ environment, using a modification of the following script. Replace the
 unit cell parameters and atom positions with the information you find in
 the materialsproject or karlsruhe databases.
 
-```
+```Python
 import numpy as np
 from ase.spacegroup import crystal
 from ase.spacegroup import Spacegroup
@@ -123,7 +143,8 @@ print(cc.get_positions())
 # Special k points
 '''
 Get Bravais lattice of unit cell cc. 
-Note that the Bravais lattice of a conventional unit cell is different from the one of a primitive unit cell. So does the special points. 
+Note that the Bravais lattice of a conventional unit cell is different 
+from the one of a primitive unit cell. So does the special points. 
 '''
 lat = cc.cell.get_bravais_lattice()
 
@@ -159,7 +180,7 @@ high-symmetry path. To do this, you can follow the steps outlined below
 (you can also refer to this paper for more information about k-paths:
 <https://doi.org/10.1016/j.commatsci.2010.05.010>):
 
-```
+```Python
 import numpy as np
 from ase.dft.kpoints import get_special_points, bandpath, special_paths
 # Define lattice vectors in Cartesian coordinates 
@@ -176,7 +197,8 @@ default_path = special_paths["rhombohedral type 1"]
 print("Default high symmetry path is:\n", default_path, '\n')
  
 # Specify high symmetry points along the desired path
-# Note: ',' denotes a jump between neighboring points, meaning no additional points will be sampled between them
+# Note: ',' denotes a jump between neighboring points, meaning no 
+# additional points will be sampled between them
 path = "GLB1,BZGX,QFP1Z,LP" 
 num_points = 200 # Define the total number of points 
  
@@ -185,7 +207,9 @@ kpath = bandpath(path, lattice_vectors, npoints=num_points) 
 path, special_points, labels = kpath.get_linear_kpoint_axis() 
 print("Scaled high symmetry points along the path are:\n", kpath.kpts, '\n')
  
-# The following postprocessing allows the path, special_points, and labels to be directly used for plotting 
+# The following postprocessing allows the path, special_points, and labels 
+# to be directly used for plotting.
+
 # Find indices where adjacent elements in special_points are equal
 indices = np.where(special_points[:-1] == special_points[1:])[0]
 # For each index, create a combined label and replace the original label with it

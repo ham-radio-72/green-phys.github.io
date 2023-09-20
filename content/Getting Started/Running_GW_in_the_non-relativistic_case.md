@@ -57,7 +57,7 @@ mulliken=true
 
 ...and here is an example of a sample invocation on the command line:
 
-```
+```Bash
 srun -v $BinDir/UGF2  ${param_file} --TNL=${tempdir}/1e7_202.h5 \
                                            --TNL_B=${tempdir}/1e7_202.h5 \
                                            --ni=202 \
@@ -115,7 +115,7 @@ submits a GPU job to run in single precision.
 First part: SLURM header. Make sure you get to the right partition,
 allocate the right memory size, use the correct number of cores, etc.
 
-```
+```Bash
 #!/bin/bash
 #SBATCH --account=egull0
 #SBATCH --job-name=Si_GPU
@@ -134,7 +134,7 @@ Second part: Load the modules and set the environment variables. Setting
 OMP_NUM_THREAD=1 unless you use OpenMP is always a good idea in case a
 library, such as BLAS or LAPACK, uses OpenMP.
 
-```
+```Bash
 module load cuda
 #OpenMP settings:
 export OMP_NUM_THREADS=1
@@ -155,7 +155,7 @@ input_file=${integral_dir}/input.h5
 Fourth part: start setting up the environment. Call nvidia-smi to see
 what GPUs are available.
 
-```
+```Bash
 date
 nvidia-smi
 
@@ -171,7 +171,7 @@ cd ${run_dir}
 available. Adjust the location and the pattern. The 'trap' command
 ensures that the files are deleted once you're done.
 
-```
+```Bash
 #create scratch dir for fast access
 scratch_base=/scratch/egull_root/egull0/egull/
 template=Si_GPU_XXXXXX
@@ -191,7 +191,7 @@ date
 
 6th part: run the GW code until convergence!
 
-```
+```Bash
 #running the job
 srun -v $BinDir/UGF2  ${param_file} --TNL=${tempdir}/1e7_202.h5 \
                                            --TNL_B=${tempdir}/1e7_202.h5 \
