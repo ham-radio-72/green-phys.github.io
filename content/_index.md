@@ -5,6 +5,12 @@ title:
 
 # Welcome to the Green software package
 
+This project is currently under active development. Content of this web-site will be
+regularly changed. The first release is expected on Nov. 1st.
+
+<hr>
+<hr>
+
 This page contains tutorials, reference, talks, and other info for the
 Green software package. Please ask [Sergei](mailto:siskakov@umich.edu)
 or [Emanuel](Mailto:egull@umich.edu) for an account and start filling in
