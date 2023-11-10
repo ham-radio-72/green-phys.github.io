@@ -1,4 +1,4 @@
 ---
 title: Core Components
-weight: 1
+weight: 2
 ---

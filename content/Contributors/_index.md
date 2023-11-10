@@ -76,7 +76,7 @@ Contact: egull#umich.edu
 
 ## Pavel Pokhilko
 
-### Main Contribution
+### Contribution
 
    - Two particle density matrices
 

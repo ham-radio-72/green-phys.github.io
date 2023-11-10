@@ -1,6 +1,6 @@
 ---
 title: Code Structure
-weight: 2
+weight: 1
 ---
 
   - ### Core components
