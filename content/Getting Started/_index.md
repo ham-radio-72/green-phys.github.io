@@ -1,6 +1,6 @@
 ---
-title: Getting Started
-weight: 1
+title: Legacy Documentation
+weight: 10
 ---
 
 ## Introductory Guidelines

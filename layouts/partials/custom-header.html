@@ -1,0 +1,9 @@
+<!-- Partial intended to be overwritten to add custom headers, like CSS or any other info
+<style>
+   /* Custom css */
+</style>
+-->
+
+{{ range .Site.Params.custom_css -}}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+{{- end }}
