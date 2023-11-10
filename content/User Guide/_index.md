@@ -1,6 +1,6 @@
 ---
 title: User Guide
-weight: 3
+weight: 1
 ---
 
 ## User Guidelines
