@@ -1,6 +1,6 @@
 ---
 title: Main Developers
-weight: 6
+weight: 3
 ---
 
 {{< columns >}}

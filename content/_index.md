@@ -19,21 +19,21 @@ content.
 ## Introductory Guidelines
 
 -   [Getting Started – Package
-    Installation](/getting-started/package_installation "wikilink")
+    Installation](/user-guide/installation "wikilink")
 -   Getting Started – General Considerations
 -   Getting Started – Basis sets and Basis functions
 -   [Getting Started – Lattice Parameters and
-    Geometries](/getting-started/lattice_parameters_and_geometries "wikilink")
+    Geometries](/user-guide/getting-started/lattice_parameters_and_geometries "wikilink")
 -   [Getting Started – Running Density Functional
-    Theory](/getting-started/running_density_functional_theory "wikilink")
+    Theory](/legacy/running_density_functional_theory "wikilink")
 -   [Getting Started – Running GW in the non-relativistic
-    case](/getting-started/running_gw_in_the_non-relativistic_case "wikilink")
+    case](/legacy/running_gw_in_the_non-relativistic_case "wikilink")
 -   [Getting Started – How to use the Exact Diagonalization
-    Code](/getting-started/how_to_use_the_exact_diagonalization_code "wikilink")
+    Code](/legacy/how_to_use_the_exact_diagonalization_code "wikilink")
 -   [Getting Started – Fitting a continuous bath with finite bath
-    levels](/getting-started/fitting_a_continuous_bath_with_finite_bath_levels "wikilink")
+    levels](/legacy/fitting_a_continuous_bath_with_finite_bath_levels "wikilink")
 -   [Getting Started – Running Self-Energy
-    Embedding](/getting-started/running_self-energy_embedding "wikilink")
+    Embedding](/legacy/running_self-energy_embedding "wikilink")
 -   Getting Started – The Double Counting Correction \[tbd\]
 -   Getting Started – Inner and Outer Self-Consistencies
 
@@ -64,7 +64,7 @@ content.
 ## Quantum impurity solvers
 
 -   The [Exact Diagonalization
-    Code](/getting-started/how_to_use_the_exact_diagonalization_code "wikilink")
+    Code](/legacy/how_to_use_the_exact_diagonalization_code "wikilink")
 -   [The Non-Crossing and One-Crossing
     solvers](/tutorials/solvers/the_non-crossing_and_one-crossing_solvers "wikilink")
 -   [Coupled Clusters Solvers](/tutorials/solvers/coupled_clusters_solvers "wikilink")
