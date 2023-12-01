@@ -6,7 +6,7 @@ title:
 # Welcome to the Green software package
 
 This project is currently under active development. Content of this web-site will be
-regularly changed. The first release is expected on Nov. 1st.
+regularly updated. The package was first released on Nov. 1st, 2023 and can now be downloaded from our repositories.
 
 <hr>
 <hr>
