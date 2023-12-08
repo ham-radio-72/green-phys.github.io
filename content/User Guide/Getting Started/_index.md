@@ -18,7 +18,7 @@ The following parameters are mandatory:
 By default it will generate `input.h5` file, that contains parameters and initial mean-field solution of the system, `df_int` and `df_hf_int` directories
 contain Coloumb integrals of the system.
 
-### Solving self-consistent approximation
+### Solving the self-consistent approximation
 
 To perform weak-coupling simulations, one have to call `mbpt.exe` executable located at the installation path in the `bin` subdirectory.
 Minimal parameters that are needed to run weak-coupling simulations are following:
