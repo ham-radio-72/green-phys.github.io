@@ -27,7 +27,7 @@ weight: 1
   $ make -j 4 && make test
   ```
 
-If you have non-standard installation location of the dependent packages installed in step 1, cmake will fail to find those. Green uses the standard cmake mechanism (FindXXX.cmake) to find those packages. The following pointers may help:
+If you have a non-standard installation location of the dependent packages installed in step 1, cmake will fail to find the package. Green uses the standard cmake mechanism (FindXXX.cmake) to find  packages. The following pointers may help:
   - For Eigen: specify in the cmake line: -DEigen3_DIR=/header/directory/of/eigen
   - For MPI: Follow the instructions on [cmake with mpi](https://cmake.org/cmake/help/latest/module/FindMPI.html)
   - For BLAS: Follow the instructions on [cmake with BLAS](https://cmake.org/cmake/help/latest/module/FindBLAS.html)
@@ -35,12 +35,13 @@ If you have non-standard installation location of the dependent packages install
 
 ***
 
-2. Code has been tested on the following national-wide HPC resources:
+2. The code has been tested on the following national-wide HPC resources:
 
   - [NSF (ACCESS) Machines](/user-guide/installation/nsf/)
     - [SDSC Expanse](/user-guide/installation/nsf/expanse/)
   - [DOE Machines](/user-guide/installation/doe/)
     - NERSC Perlmutter
+  If you would like to have the code tested on additional machines please let us know by filing an [issue(https://github.com/Green-Phys/green-mbpt/issues).
 
 3. Installation issues
    If you encounter issues with compiling, installing, or testing the package please file an issue on our github issues page, [https://github.com/Green-Phys/green-mbpt/issues](https://github.com/Green-Phys/green-mbpt/issues), and we will do our best to help.
