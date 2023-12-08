@@ -5,9 +5,9 @@ weight: 2
 
 ### Preparing input data
 
-The first step, to perform simulations with `Green`/`WeakCoupling`, is the preparation of input data.
-Currently to prepare input data we use interface with [PySCF](https://pyscf.org/).
-To generate input data user has to call `python/init_data_df.py` script located in the source directory.
+The first step of any simulations with `Green`/`WeakCoupling` is the preparation of the input data, which includes the calculation of the Coulomb and one-body integrals as well as a starting density matrix out of geometry, atom, k-point, and basis information.
+Currently  we use an interface with [PySCF](https://pyscf.org/) to prepare input data.
+To generate input data a user has to call the `python/init_data_df.py` script located in the source directory.
 The following parameters are mandatory:
 
   - `--a`  path to a file containing crystal geometry in xyz format
@@ -15,8 +15,8 @@ The following parameters are mandatory:
   - `--nk`  number of reciprocal space points in each direction
   - `--basis`  Gaussian basis set, it can be specified as a single basis for every atom in the unit cell or for each atom individually
 
-By default it will generate `input.h5` file, that contains parameters and initial mean-field solution of the system, `df_int` and `df_hf_int` directories
-contain Coloumb integrals of the system.
+By default the script will  `init_data_df.py' will generate the file `input.h5`. This file contains all necessary parameters and an initial mean-field solution of the system. In addition, the script will generate the `df_int` and `df_hf_int` directories
+which contain the Coloumb and one-body integrals of the system.
 
 ### Solving the self-consistent approximation
 
