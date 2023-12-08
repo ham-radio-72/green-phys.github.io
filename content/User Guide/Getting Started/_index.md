@@ -7,7 +7,7 @@ weight: 2
 
 The first step of any simulations with `Green`/`WeakCoupling` is the preparation of the input data, which includes the calculation of the Coulomb and one-body integrals as well as a starting density matrix out of geometry, atom, k-point, and basis information.
 Currently  we use an interface with [PySCF](https://pyscf.org/) to prepare input data.
-To generate input data a user has to call the `python/init_data_df.py` script located in the source directory.
+To generate input data a user has to call the `python/init_data_df.py` script located in the source directory (for a simple example see below).
 The following parameters are mandatory:
 
   - `--a`  path to a file containing crystal geometry in xyz format
@@ -15,7 +15,7 @@ The following parameters are mandatory:
   - `--nk`  number of reciprocal space points in each direction
   - `--basis`  Gaussian basis set, it can be specified as a single basis for every atom in the unit cell or for each atom individually
 
-By default the script will  `init_data_df.py' will generate the file `input.h5`. This file contains all necessary parameters and an initial mean-field solution of the system. In addition, the script will generate the `df_int` and `df_hf_int` directories
+By default the script will  `init_data_df.py` will generate the file `input.h5`. This file contains all necessary parameters and an initial mean-field solution of the system. In addition, the script will generate the `df_int` and `df_hf_int` directories
 which contain the Coloumb and one-body integrals of the system.
 
 If your python installation does not have pyscf available (type `python` and, in the python prompt, `import pyscf`), you will need to follow the instructions at [PySCF](https://pyscf.org/) or execute `pip install pyscf`.
