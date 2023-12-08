@@ -6,7 +6,7 @@ weight: 2
 ### Preparing input data
 
 The first step, to perform simulations with `Green`/`WeakCoupling`, is the preparation of input data.
-Currently to prepare input data we use interface with \textnormal{\texttt{PySCF}}.
+Currently to prepare input data we use interface with [PySCF](https://pyscf.org/).
 To generate input data user has to call `python/init_data_df.py` script located in the source directory.
 The following parameters are mandatory:
 
