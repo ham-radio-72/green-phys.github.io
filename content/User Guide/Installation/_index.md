@@ -41,7 +41,7 @@ If you have a non-standard installation location of the dependent packages insta
     - [SDSC Expanse](/user-guide/installation/nsf/expanse/)
   - [DOE Machines](/user-guide/installation/doe/)
     - NERSC Perlmutter
-  If you would like to have the code tested on additional machines please let us know by filing an [issue(https://github.com/Green-Phys/green-mbpt/issues).
+  If you would like to have the code tested on additional machines please let us know by filing an [issue](https://github.com/Green-Phys/green-mbpt/issues).
 
 3. Installation issues
    If you encounter issues with compiling, installing, or testing the package please file an issue on our github issues page, [https://github.com/Green-Phys/green-mbpt/issues](https://github.com/Green-Phys/green-mbpt/issues), and we will do our best to help.
