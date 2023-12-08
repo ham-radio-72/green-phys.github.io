@@ -18,7 +18,7 @@ The following parameters are mandatory:
 By default the script will  `init_data_df.py' will generate the file `input.h5`. This file contains all necessary parameters and an initial mean-field solution of the system. In addition, the script will generate the `df_int` and `df_hf_int` directories
 which contain the Coloumb and one-body integrals of the system.
 
-If your python installation does not have pyscf available (type `python' and, in the python prompt, `import pyscf'), you will need to follow the instructions at [PySCF](https://pyscf.org/) or execute `pip install pyscf'.
+If your python installation does not have pyscf available (type `python` and, in the python prompt, `import pyscf`), you will need to follow the instructions at [PySCF](https://pyscf.org/) or execute `pip install pyscf`.
 
 ### Solving the self-consistent approximation
 
