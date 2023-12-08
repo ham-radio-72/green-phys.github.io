@@ -39,27 +39,27 @@ For more details on nonuniform grids, please follow this [link](/tutorials/matsu
 After succesful completetion results will be written to a file located at `--results_file` (by default set to `sim.h5`)
 To get information about other parameters and their default values call `mbpt.exe --help`.
 
-### Tutorial on running Silicon
+### Minimal example for running Silicon
 
-Here we provide a simple example on how to run `Green`/`Weakcoupling` on the example of a periodic silicon on `2x2x2` lattice.
-We use the `a.dat` file containing the following unit cell information
+Here we provide a simple example on how to run `Green`/`Weakcoupling` on the example of a periodic silicon on `2x2x2` lattice. Change to a new directory where you will keep your simulations, create a directory for the Si simulation, and create the file `a.dat` containing the following unit cell information:
 ```
 0.0,  2.7155, 2.7155
 2.7155, 0.0,  2.7155
 2.7155, 2.7155, 0.0
 ```
 
-Lattice vectors located in `atom.dat` file
+Then create a file with the atom positions in the `atom.dat`:
 ```
 Si 0.0  0.0  0.0
 Si 1.35775 1.35775 1.35775
 ```
+The remaining parameters will be specified on the command line.
 
-First, we need to obtain parameters and initial mean-field solution
+We then obtain input parameters and the initial mean-field solution by running pySCF via the `init_data_df.py` script:
 ```
 python <source root>/green-mbpt/python/init_data_df.py --a a.dat --atom atom.dat --nk 2 --basis gth-dzvp-molopt-sr --pseudo gth-pbe --xc PBE 
 ```
-We use `gth-dzvp-molopt-sr` basis and `gth-pbe` psudopotential and run `DFT` mean-field approximation  with `PBE` exchange correlation potential
+Here we use the `gth-dzvp-molopt-sr` basis with the `gth-pbe` psudopotential and run `DFT` mean-field approximation  with a `PBE` exchange correlation potential
 to reproduce results from [Phys. Rev. B 106, 235104].
 
 After that we will run `GW` approximation
