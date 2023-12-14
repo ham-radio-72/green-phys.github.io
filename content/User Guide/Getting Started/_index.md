@@ -20,6 +20,7 @@ which contain the Coloumb and one-body integrals of the system.
 
 If your python installation does not have pyscf available (type `python` and, in the python prompt, `import pyscf`), you will need to follow the instructions at [PySCF](https://pyscf.org/) or execute `pip install pyscf`. Similarly, since `init_data_df.py` depends on the (numba)[https://numba.pydata.org/] module, you may need to install it as `pip install numba`.
 
+
 ### Solving the self-consistent approximation
 
 To perform weak-coupling simulations, one have to call `mbpt.exe` executable located at the installation path in the `bin` subdirectory.
@@ -38,6 +39,34 @@ For more details on nonuniform grids, please follow this [link](/tutorials/matsu
 
 After succesful completetion results will be written to a file located at `--results_file` (by default set to `sim.h5`)
 To get information about other parameters and their default values call `mbpt.exe --help`.
+
+### Postprocessing
+
+`Green`/`Weakcoupling` code provides several post-processing procedures such as analytical continuation package to obtain spectral representation,
+thermodynamic utilities to obtain various thermodynamic quantities.
+
+#### Spectral representation
+
+To obtain spectral representation of the Green's function `Green` software stack provides analytical continuation package.
+
+```ShellSession
+  $ git clone https://github.com/Green-Phys/green-ac.git
+  $ mkdir build
+  $ cd build
+  $ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/path/to/install/directory ../green-ac
+  $ make -j 4 && make test && make install
+```
+
+This will install `Green`/`Continuation` package into `/path/to/install/directory`.
+
+To run analytical continuation one have to call `ac.exe` executable located at the installation path in the `bin` subdirectory.
+The following parameters are mandatory:
+  - `--grid_file`  Sparse imaginary time/frequency grid file name
+  - `--BETA`  Inverse temperature
+  - `--input_file`  Name of the input file
+  - `--output_file`  Name of the output file
+  - `--group`  Name of the HDF5 group in the input file, that contains imaginary time data, it has to contain `mesh` and `data` datasets.
+  - `--kind`  Type of analytical continuation, currently only `NEVANLINNA` is implemented.
 
 ### Minimal example for running Silicon
 
@@ -68,3 +97,8 @@ After that we will run `GW` approximation
 ```
 Here we run `GW` approximation at inverse temperature $ \beta=100 $, we  use `IR` nonuniform grid for $ \Lambda = 10^4 $ and run for 10 iterations
 and store results into `Si.h5` file.
+
+### Postprocessing
+
+
+
