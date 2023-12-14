@@ -98,7 +98,11 @@ After that we will run `GW` approximation
 Here we run `GW` approximation at inverse temperature $ \beta=100 $, we  use `IR` nonuniform grid for $ \Lambda = 10^4 $ and run for 10 iterations
 and store results into `Si.h5` file.
 
-### Postprocessing
-
+To obtain spectral function for silicon one simply run the following
+```
+<install dir>/bin/ac.exe  --BETA 100 --grid_file ir/1e4.h5 --input_file Si.h5 --output_file ac.h5 --group iter10/G_tau --kind Nevanlinna
+```
+This will run Nevanlinna analytical continuation for the data obtained at `10`-th iteration for all `k`-points, output will be put into
+`iter10` group of the output `HDF5` file.
 
 
