@@ -42,12 +42,12 @@ To get information about other parameters and their default values call `mbpt.ex
 
 ### Postprocessing
 
-`Green`/`Weakcoupling` code provides several post-processing procedures such as analytical continuation package to obtain spectral representation,
-thermodynamic utilities to obtain various thermodynamic quantities.
+The `Green`/`Weakcoupling` code provides several post-processing procedures such as analytical continuation packages to obtain spectral representations and
+thermodynamic utilities to obtain thermodynamic quantities.
 
 #### Spectral representation
 
-To obtain spectral representation of the Green's function `Green` software stack provides analytical continuation package.
+To obtain the spectral representation of a Green's function, the `Green` software stack provides an analytical continuation package.
 
 ```ShellSession
   $ git clone https://github.com/Green-Phys/green-ac.git
@@ -57,16 +57,18 @@ To obtain spectral representation of the Green's function `Green` software stack
   $ make -j 4 && make test && make install
 ```
 
-This will install `Green`/`Continuation` package into `/path/to/install/directory`.
+This will install the `Green`/`Continuation` package into `/path/to/install/directory`.
 
-To run analytical continuation one have to call `ac.exe` executable located at the installation path in the `bin` subdirectory.
-The following parameters are mandatory:
+To run the analytical continuation one have to execute the program `ac.exe` located at the installation path in the `bin` subdirectory.
+The following parameters are required:
   - `--grid_file`  Sparse imaginary time/frequency grid file name
   - `--BETA`  Inverse temperature
   - `--input_file`  Name of the input file
   - `--output_file`  Name of the output file
   - `--group`  Name of the HDF5 group in the input file, that contains imaginary time data, it has to contain `mesh` and `data` datasets.
   - `--kind`  Type of analytical continuation, currently only `NEVANLINNA` is implemented.
+
+The command `ac.exe --help` will provide additional information.
 
 ### Minimal example for running Silicon
 
