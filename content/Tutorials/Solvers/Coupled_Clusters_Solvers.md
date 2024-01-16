@@ -13,7 +13,7 @@ main paper on the method is [Phys. Rev. B **103**,
 {{< youtube id="09mVMEq-5ag" >}}
 
 You can find the slides
-[here](https://green.physics.lsa.umich.edu/mw19/images/f/fa/Talk_ccgf.pdf).
+[here](/files/Talk_ccgf.pdf).
 
 ## Part II: Coupled Clusters Solver Practice
 

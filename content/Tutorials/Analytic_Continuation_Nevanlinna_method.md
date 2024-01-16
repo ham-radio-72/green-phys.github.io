@@ -19,9 +19,9 @@ mathematical background:
 
 {{< youtube id="aEGrqG9EY98" >}}
 
-[Here](https://green.physics.lsa.umich.edu/mw19/images/d/dc/Nevanlinna_group_meeting_220628.key.pdf) are her slides.
+[Here](/files/Nevanlinna_group_meeting_220628.key.pdf) are her slides.
 
 
 Note that the talk mentions source files for the optimization procedure.
 You can find those
-[here](https://green.physics.lsa.umich.edu/Nevanlinna_Schur.zip).
+[here](/files/Nevanlinna_Schur.zip).

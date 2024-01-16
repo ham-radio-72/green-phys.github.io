@@ -20,9 +20,9 @@ Room version:
 {{< youtube id="tZTQUhSJc3A" >}}
 
 Here are his
-[slides](http://sites.lsa.umich.edu/gull-lab/wp-content/uploads/sites/480/2022/04/XCA-slides.pdf)
+[slides](/files/XCA-slides.pdf)
 and his detailed
-[notes](http://sites.lsa.umich.edu/gull-lab/wp-content/uploads/sites/480/2022/04/XCA-note.pdf)
+[notes](/files/XCA-note.pdf)
 with derivations.
 
 The Hybridiation expansion CT-QMC method in its [single

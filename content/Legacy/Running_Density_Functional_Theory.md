@@ -23,7 +23,7 @@ your choice of basis.
 [PBE](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.77.3865)
 is a very standard functional and a decent initial choice of functional.
 
-Runxue gave an [introduction to VASP](/introduction_to_VASP "wikilink")
+Runxue gave an [introduction to VASP](/tutorials/introduction_to_vasp "wikilink")
 in our group seminar
 
 ## Step 2 – Crystal or CP2K with PBE
@@ -37,7 +37,7 @@ pseudopotentials, while CP2K is a more established standard Gaussian DFT
 code. Gaussian bases are differently biased from plane wave basis sets
 with pseudopotential. Obtaining a bandstructure plot in both codes will
 give you a basis for comparison. Yanbing gave an excellent [tutorial on
-using Crystal](/tutorial_on_using_Crystal "wikilink").
+using Crystal](/tutorials/tutorial_on_using_crystal "wikilink").
 
 ## Step 3 – DFT in pySCF
 

@@ -18,4 +18,4 @@ Second recording of the talk, room version:
 {{< youtube id="NyyCXMjFucE" >}}
 
 Slides for the talk are available
-[here](http://sites.lsa.umich.edu/gull-lab/wp-content/uploads/sites/480/2022/04/Pavel_DIIS.pdf).
+[here](/files/Pavel_DIIS.pdf).

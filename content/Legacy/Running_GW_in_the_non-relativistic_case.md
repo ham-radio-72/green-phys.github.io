@@ -9,7 +9,7 @@ Chia-Nan's talk on running GW in the non-relativistic case:
 {{<youtube id="krpJrQlJl1Q" >}}
 
 Slides are available
-[here](https://green.physics.lsa.umich.edu/mw19/images/d/df/ScGW_in_practice.pdf).
+[here](/files/scGW_in_practice.pdf).
 
 ## Prerequisites
 
@@ -21,7 +21,10 @@ geometry.
 The script init_data_df.py will run pySCF to obtain these quantities.
 For Silicon, it would typically be invoked as
 
-`python -O init_data_df.py --a ../input/a.dat --atom ../input/atoms.dat --nk 6 --Nk 6 --basis gthdzvpmoloptsr --pseudo gthpbe --auxbasis def2-svp --xc pbe --sigma 0.5`
+```Python
+python -O init_data_df.py --a ../input/a.dat --atom ../input/atoms.dat --nk 6 --Nk 6  \
+     --basis gthdzvpmoloptsr --pseudo gthpbe --auxbasis def2-svp --xc pbe --sigma 0.5
+```
 
 ## GW Parameter file
 

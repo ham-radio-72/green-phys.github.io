@@ -10,7 +10,7 @@ See below for a tutorial on how to download and install the SEET codes.
 
 [thumb](/File:SEET_tutorial.pdf "wikilink") PDF versions of the slides
 for this talk are available
-[here](http://sites.lsa.umich.edu/gull-lab/wp-content/uploads/sites/480/2022/04/SEET_tutorial.pdf)
+[here](/files/SEET_tutorial.pdf)
 
 ## Prerequisites
 

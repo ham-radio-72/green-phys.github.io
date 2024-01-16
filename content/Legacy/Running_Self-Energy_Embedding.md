@@ -9,5 +9,5 @@ The following is a recording of Chia-Nan's group seminar given on June
 
 {{< youtube id="TL56uWrQilw" >}}
 
-[Here](https://green.physics.lsa.umich.edu/mw19/images/8/84/20220608_SEET_in_practice.pdf)
+[Here](/files/20220608_SEET_in_practice.pdf)
 are the slides.

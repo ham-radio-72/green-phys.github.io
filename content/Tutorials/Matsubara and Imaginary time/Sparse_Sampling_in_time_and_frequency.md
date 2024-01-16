@@ -12,7 +12,7 @@ Wallerberger](https://www.wallerberger.at/):
 
 {{< youtube id="c1-m6LuldnQ" >}}
 
-[Slides](http://sites.lsa.umich.edu/gull-lab/wp-content/uploads/sites/480/2022/04/wallerberger-seminar-gull.pdf)
+[Slides](/files/wallerberger-seminar-gull.pdf)
 of the talk by Markus.
 
 The key paper on sparse sampling is

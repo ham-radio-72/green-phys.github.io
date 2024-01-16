@@ -10,4 +10,4 @@ Sergei Iskakov.
 {{< youtube id="sQay0Wrh7_o" >}}
 
 Sergei's slides are
-[here](https://green.physics.lsa.umich.edu/mw19/images/a/a7/BathFitting.pdf).
+[here](/files/BathFitting.pdf).
