@@ -85,6 +85,8 @@ content.
 -   Analytic Continuation – Maximum Entropy method
 -   [Analytic Continuation – Nevanlinna
     method](/tutorials/analytic_continuation_nevanlinna_method "wikilink")
+-   [Analytic Continuation – Prony
+    method](/tutorials/analytic_continuation_prony_method "wikilink")
 -   Analytic Continuation – Carathéodory matrix-valued method
 -   Post Processing – Orbital Analysis
 -   Post Processing – Mulliken Analysis
