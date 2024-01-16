@@ -18,6 +18,10 @@ The following parameters are mandatory:
 By default the script will  `init_data_df.py` will generate the file `input.h5`. This file contains all necessary parameters and an initial mean-field solution of the system. In addition, the script will generate the `df_int` and `df_hf_int` directories
 which contain the Coloumb and one-body integrals of the system.
 
+To obtain result on the specific high-symmetry path one should specify the high symmetry points we want obtain results and the number of points 
+along this path by providing two parameters `--high_symmetry_path` and `--high_symmetry_path_points`. To see available high-symmetry points for chosen system
+option `--print_high_symmetry_points` should be set. This procedure will perform basic Wannier interpolation.
+
 If your python installation does not have pyscf available (type `python` and, in the python prompt, `import pyscf`), you will need to follow the instructions at [PySCF](https://pyscf.org/) or execute `pip install pyscf`. Similarly, since `init_data_df.py` depends on the (numba)[https://numba.pydata.org/] module, you may need to install it as `pip install numba`.
 
 
@@ -92,6 +96,8 @@ python <source root>/green-mbpt/python/init_data_df.py --a a.dat --atom atom.dat
 ```
 Here we use the `gth-dzvp-molopt-sr` basis with the `gth-pbe` psudopotential and run `DFT` mean-field approximation  with a `PBE` exchange correlation potential
 to reproduce results from [Phys. Rev. B 106, 235104].
+
+
 
 After that we will run `GW` approximation
 ```
