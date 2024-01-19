@@ -106,14 +106,13 @@ After that we will run `GW` approximation
 ```
 <install dir>/bin/mbpt.exe --scf_type=GW --BETA 100 --grid_file ir/1e4.h5 --itermax 10 --results_file Si.h5 --high_symmetry_output_file Si_hs.h5
 ```
-Here we run `GW` approximation at inverse temperature $ \beta=100 $, we  use `IR` nonuniform grid for $ \Lambda = 10^4 $ and run for 10 iterations
-and store results into `Si.h5` file, and results on high-symmetry path will be stored in `Si_hs.h5`.
+Here we run the `GW` approximation at inverse temperature $ \beta=100 $, we  use an `IR` nonuniform grid for $ \Lambda = 10^4 $ and run for 10 iterations. We then store bulk results into `Si.h5` file. Results along the high-symmetry path will be stored in `Si_hs.h5`.
 
-To obtain spectral function for silicon one simply run the following
+To obtain the spectral function for silicon run
 ```
 <install dir>/bin/ac.exe  --BETA 100 --grid_file ir/1e4.h5 --input_file Si_hs.h5 --output_file ac.h5 --group G_tau_hs --kind Nevanlinna
 ```
-This will run Nevanlinna analytical continuation for the data obtained at `10`-th iteration for all `k`-points, output will be put into
-`G_tau_hs` group of the output `HDF5` file.
+This will run Nevanlinna analytical continuation for the data obtained at the `10`-th iteration for all `k`-points. The output will be stored in the group
+`G_tau_hs` of the output `HDF5` file `ac.h5`.
 
 
