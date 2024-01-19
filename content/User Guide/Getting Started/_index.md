@@ -19,7 +19,7 @@ By default the script will  `init_data_df.py` will generate the file `input.h5`.
 which contain the Coloumb and one-body integrals of the system.
 
 After the simulation is performed, results (such as band structures) could be displayed along a high-symmetry path. To obtain a specific high-symmetry path, 
-specify the high symmetry points on the path and the total number of points along the path by providing the two parameters `--high_symmetry_path` and `--high_symmetry_path_points`.
+specify the high-symmetry points on the path and the total number of points along the path by providing the two parameters `--high_symmetry_path` and `--high_symmetry_path_points`.
 To see all available high-symmetry points for a chosen system, use theoption `--print_high_symmetry_points`.
 The interplation along high-symmetry paths will perform a basic Wannier interpolation.
 
@@ -43,7 +43,9 @@ For more details on nonuniform grids, please follow this [link](/tutorials/matsu
 
 
 After succesful completetion results will be written to a file located at `--results_file` (by default set to `sim.h5`)
-To get information about other parameters and their default values call `mbpt.exe --help`.
+To get information about other parameters and their default values call `mbpt.exe --help`. If input data contains information about high-symmetry path,
+diagonal part of the Green's function will be evaluated on provided high-symmetry path, and results will be stored in the `G_tau_hs` group in `--high_symmetry_output_file` 
+(by default set to `output_hs.h5`).
 
 ### Postprocessing
 
@@ -93,25 +95,25 @@ The remaining parameters will be specified on the command line.
 
 We then obtain input parameters and the initial mean-field solution by running pySCF via the `init_data_df.py` script:
 ```
-python <source root>/green-mbpt/python/init_data_df.py --a a.dat --atom atom.dat --nk 2 --basis gth-dzvp-molopt-sr --pseudo gth-pbe --xc PBE 
+python <source root>/green-mbpt/python/init_data_df.py --a a.dat --atom atom.dat --nk 2 --basis gth-dzvp-molopt-sr --pseudo gth-pbe --xc PBE \
+         --high_symmetry_path WGXWLG  --high_symmetry_path_points 100
 ```
-Here we use the `gth-dzvp-molopt-sr` basis with the `gth-pbe` psudopotential and run `DFT` mean-field approximation  with a `PBE` exchange correlation potential
-to reproduce results from [Phys. Rev. B 106, 235104].
-
+Here we use the `gth-dzvp-molopt-sr` basis with the `gth-pbe` psudopotential and run `DFT` mean-field approximation  with a `PBE` exchange correlation potential,
+we set high-symmetry path to `WGXWLG` to reproduce results from [Phys. Rev. B 106, 235104].
 
 
 After that we will run `GW` approximation
 ```
-<install dir>/bin/mbpt.exe --scf_type=GW --BETA 100 --grid_file ir/1e4.h5 --itermax 10 --results_file Si.h5
+<install dir>/bin/mbpt.exe --scf_type=GW --BETA 100 --grid_file ir/1e4.h5 --itermax 10 --results_file Si.h5 --high_symmetry_output_file Si_hs.h5
 ```
 Here we run `GW` approximation at inverse temperature $ \beta=100 $, we  use `IR` nonuniform grid for $ \Lambda = 10^4 $ and run for 10 iterations
-and store results into `Si.h5` file.
+and store results into `Si.h5` file, and results on high-symmetry path will be stored in `Si_hs.h5`.
 
 To obtain spectral function for silicon one simply run the following
 ```
-<install dir>/bin/ac.exe  --BETA 100 --grid_file ir/1e4.h5 --input_file Si.h5 --output_file ac.h5 --group iter10/G_tau --kind Nevanlinna
+<install dir>/bin/ac.exe  --BETA 100 --grid_file ir/1e4.h5 --input_file Si_hs.h5 --output_file ac.h5 --group G_tau_hs --kind Nevanlinna
 ```
 This will run Nevanlinna analytical continuation for the data obtained at `10`-th iteration for all `k`-points, output will be put into
-`iter10` group of the output `HDF5` file.
+`G_tau_hs` group of the output `HDF5` file.
 
 
