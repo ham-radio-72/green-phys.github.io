@@ -102,7 +102,7 @@ Here we use the `gth-dzvp-molopt-sr` basis with the `gth-pbe` psudopotential and
 we set high-symmetry path to `WGXWLG` to reproduce results from [Phys. Rev. B 106, 235104].
 
 
-After that we will run `GW` approximation
+After that we will run the `GW` approximation
 ```
 <install dir>/bin/mbpt.exe --scf_type=GW --BETA 100 --grid_file ir/1e4.h5 --itermax 10 --results_file Si.h5 --high_symmetry_output_file Si_hs.h5
 ```
