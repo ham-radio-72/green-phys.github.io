@@ -18,9 +18,10 @@ The following parameters are mandatory:
 By default the script will  `init_data_df.py` will generate the file `input.h5`. This file contains all necessary parameters and an initial mean-field solution of the system. In addition, the script will generate the `df_int` and `df_hf_int` directories
 which contain the Coloumb and one-body integrals of the system.
 
-To obtain result on the specific high-symmetry path one should specify the high symmetry points we want obtain results and the number of points 
-along this path by providing two parameters `--high_symmetry_path` and `--high_symmetry_path_points`. To see available high-symmetry points for chosen system
-option `--print_high_symmetry_points` should be set. This procedure will perform basic Wannier interpolation.
+After the simulation is performed, results (such as band structures) could be displayed along a high-symmetry path. To obtain a specific high-symmetry path, 
+specify the high symmetry points on the path and the total number of points along the path by providing the two parameters `--high_symmetry_path` and `--high_symmetry_path_points`.
+To see all available high-symmetry points for a chosen system, use theoption `--print_high_symmetry_points`.
+The interplation along high-symmetry paths will perform a basic Wannier interpolation.
 
 If your python installation does not have pyscf available (type `python` and, in the python prompt, `import pyscf`), you will need to follow the instructions at [PySCF](https://pyscf.org/) or execute `pip install pyscf`. Similarly, since `init_data_df.py` depends on the (numba)[https://numba.pydata.org/] module, you may need to install it as `pip install numba`.
 
