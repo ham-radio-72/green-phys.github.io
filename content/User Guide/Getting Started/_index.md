@@ -43,9 +43,14 @@ For more details on nonuniform grids, please follow this [link](/tutorials/matsu
 
 
 After succesful completetion results will be written to a file located at `--results_file` (by default set to `sim.h5`)
-To get information about other parameters and their default values call `mbpt.exe --help`. If input data contains information about high-symmetry path,
-diagonal part of the Green's function will be evaluated on provided high-symmetry path, and results will be stored in the `G_tau_hs` group in `--high_symmetry_output_file` 
+To get information about other parameters and their default values call `mbpt.exe --help`. 
+
+### Band-path interpolation
+
+If input data contains information about high-symmetry path,
+diagonal part of the Green's function can be evaluated on provided high-symmetry path, and results will be stored in the `G_tau_hs` group in `--high_symmetry_output_file` 
 (by default set to `output_hs.h5`).
+For that the option `--jobs WINTER`
 
 ### Postprocessing
 
@@ -104,9 +109,9 @@ we set high-symmetry path to `WGXWLG` to reproduce results from [Phys. Rev. B 10
 
 After that we will run the `GW` approximation
 ```
-<install dir>/bin/mbpt.exe --scf_type=GW --BETA 100 --grid_file ir/1e4.h5 --itermax 10 --results_file Si.h5 --high_symmetry_output_file Si_hs.h5
+<install dir>/bin/mbpt.exe --scf_type=GW --BETA 100 --grid_file ir/1e4.h5 --itermax 10 --results_file Si.h5 --high_symmetry_output_file Si_hs.h5 --jobs SC,WINTER
 ```
-Here we run the `GW` approximation at inverse temperature $ \beta=100 $, we  use an `IR` nonuniform grid for $ \Lambda = 10^4 $ and run for 10 iterations. We then store bulk results into `Si.h5` file. Results along the high-symmetry path will be stored in `Si_hs.h5`.
+Here we run the self-consistent `GW` approximation at inverse temperature $ \beta=100 $, we  use an `IR` nonuniform grid for $ \Lambda = 10^4 $ and run for 10 iterations. We then store bulk results into `Si.h5` file. After the self-consistent simulation is finished band-path interpolation  along the high-symmetry path will be evaluated and stored in `Si_hs.h5`.
 
 To obtain the spectral function for silicon run
 ```
