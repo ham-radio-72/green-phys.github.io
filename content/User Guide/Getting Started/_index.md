@@ -115,4 +115,8 @@ To obtain the spectral function for silicon run
 This will run Nevanlinna analytical continuation for the data obtained at the `10`-th iteration for all `k`-points. The output will be stored in the group
 `G_tau_hs` of the output `HDF5` file `ac.h5`.
 
-
+Band-structure figure can be obtained via the `plot_bands.py` script:
+```
+python <source root>/green-mbpt/python/plot_bands.py --input_file ac.h5 --output_dir bands
+```
+This will read the analytically continued data and plot it into a `<output_dir>/bands.png` file and in addition create a plain-text data files for every k-point along the chosen path in `<output_dir>` directory.
