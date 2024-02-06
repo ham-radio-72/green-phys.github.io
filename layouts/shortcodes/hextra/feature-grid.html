@@ -1,0 +1,9 @@
+{{- $style := .Get "style" -}}
+{{- $ncols := .Get "maxcolumns" -}}
+
+<div
+  class="grid sm:grid-cols-{{ $ncols }} lg:grid-cols-{{ $ncols }} grid-cols-{{ $ncols }} gap-4 w-full not-prose"
+  {{ with $style }}style="{{ . | safeCSS }}"{{ end }}
+>
+  {{ .Inner }}
+</div>

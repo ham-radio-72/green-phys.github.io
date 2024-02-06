@@ -1,6 +1,6 @@
 ---
 title: Contribution policy
-weight: 3
+weight: 5
 ---
 
 Contribution to any part of the Green project is open for every user.

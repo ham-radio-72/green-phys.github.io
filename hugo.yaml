@@ -1,0 +1,63 @@
+# Configuration
+baseURL: 'https://green-phys.org/'
+title: 'Green: Embedding Framework for Quantum Many-Body simulations'
+
+enableRobotsTXT: true
+enableGitInfo: true
+enableEmoji: true
+hasCJKLanguage: true
+enableInlineShortcodes: true
+
+
+outputs:
+  home: [HTML]
+  page: [HTML]
+  section: [HTML, RSS]
+
+defaultContentLanguage: en
+
+module:
+  imports:
+    - path: github.com/imfing/hextra
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+
+params:
+  theme:
+    # light | dark | system
+    default: system
+    displayToggle: true
+  editURL:
+    enable: true
+    base: "https://github.com/Green-Phys/green-phys.github.io/edit/main"
+  navbar:
+    displayLogo: true
+    logo:
+      path: logo/rosetta.png
+      dark: logo/rosetta.png
+      width: 36px
+
+menu:
+  main:
+    - identifier: documentation
+      name: Documentation
+      pageRef: /docs
+      weight: 1
+    - identifier: about
+      name: About
+      pageRef: /about
+      weight: 2
+    - name: Search
+      weight: 5
+      params:
+        type: search
+    - name: GitHub
+      weight: 6
+      url: "https://github.com/Green-Phys"
+      params:
+        icon: github

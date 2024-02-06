@@ -1,5 +1,6 @@
 ---
-title: Installation
+title: Installation instruction
+linkTitle: Installation from sources
 weight: 1
 ---
 

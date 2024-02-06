@@ -1,5 +1,6 @@
 ---
-title: Getting Started
+title: Running weak-coupling simulations
+linkTitle: Weak-coupling code
 weight: 2
 ---
 
@@ -39,7 +40,7 @@ Minimal parameters that are needed to run weak-coupling simulations are followin
     - build directory of weak-coupling code
 
 Currently, we provide IR (`ir` subdirectory) and Chebyshev grids (`cheb` subdirectory) for nonuniform imaginary time representation.
-For more details on nonuniform grids, please follow this [link](/tutorials/matsubara-and-imaginary-time)
+For more details on nonuniform grids, please follow this [link](/docs/tutorials/matsubara-and-imaginary-time)
 
 
 After succesful completetion results will be written to a file located at `--results_file` (by default set to `sim.h5`)

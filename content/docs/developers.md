@@ -1,6 +1,7 @@
 ---
 title: Main Developers
-weight: 3
+weight: 4
+icon: user-group
 ---
 
 {{< columns >}}
@@ -14,7 +15,7 @@ Contact: egull#umich.edu
 
 <--->
 
-![Resize](/headshots/egull.jpg?width=150px)
+{{< figure src="/headshots/egull.jpg" width="150px" >}}
 
 {{< /columns >}}
 
@@ -33,7 +34,7 @@ Contact: egull#umich.edu
 
 <--->
 
-![Resize](/headshots/siskakov.jpg?width=150px)
+{{< figure src="/headshots/siskakov.jpg" width="150px" >}}
 
 {{< /columns >}}
 
@@ -50,7 +51,7 @@ Contact: egull#umich.edu
 
 <--->
 
-![Resize](/headshots/cnyeh.jpg?width=150px)
+{{< figure src="/headshots/cnyeh.jpg" width="150px" >}}
 
 {{< /columns >}}
 
@@ -66,7 +67,7 @@ Contact: egull#umich.edu
 
 <--->
 
-![Resize](/headshots/jli.jpg?width=150px)
+{{< figure src="/headshots/jli.jpg" width="150px" >}}
 
 {{< /columns >}}
 
@@ -82,7 +83,7 @@ Contact: egull#umich.edu
 
 <--->
 
-![Resize](/headshots/pokhilko.jpg?width=150px)
+{{< figure src="/headshots/pokhilko.jpg" width="150px" >}}
 
 {{< /columns >}}
 
@@ -96,7 +97,7 @@ Contact: egull#umich.edu
 
 <--->
 
-![Resize](/headshots/umyangyu.jpg?width=150px)
+{{< figure src="/headshots/umyangyu.jpg" width="150px" >}}
 
 {{< /columns >}}
 
@@ -110,7 +111,7 @@ Contact: egull#umich.edu
 
 <--->
 
-![Resize](/headshots/runxueyu.jpg?width=150px)
+{{< figure src="/headshots/runxueyu.jpg" width="150px" >}}
 
 {{< /columns >}}
 
