@@ -12,12 +12,17 @@ icon: rocket-launch
     link="weak"
   >}}
   {{< hextra/feature-card
+    title="Exmaples"
+    subtitle="Simple examples on running Green codes"
+    link="examples"
+  >}}
+  {{< hextra/feature-card
     title="Geometries"
     subtitle=""
     link="lattice_parameters_and_geometries"
   >}}
   {{< hextra/feature-card
-    title="Intallation"
+    title="Installation"
     subtitle=""
     link="../installation/installation"
   >}}

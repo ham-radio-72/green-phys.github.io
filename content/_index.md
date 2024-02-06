@@ -1,5 +1,6 @@
 ---
 title: 
+linkTitle: Green Documentation
 .. permalink: /Main_Page/
 ---
 

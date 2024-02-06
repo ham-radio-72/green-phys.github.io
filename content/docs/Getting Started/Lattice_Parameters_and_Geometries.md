@@ -2,6 +2,7 @@
 title: Lattice Parameters and Geometries
 permalink: /Getting_Started_–_Lattice_Parameters_and_Geometries/
 weight : 14
+math: true
 ---
 
 ## Getting the lattice parameters
@@ -25,37 +26,32 @@ in the unit cell. Generically you will get three lengths (a, b, c) and
 three angles (α,β,γ). You will use this information to generate the
 three unit cell vectors as a 3x3 matrix. Check your favorite textbook
 for instructions; for instance in a simple cubic lattice the vectors (in
-units of the lattice spacing a) are
+units of the lattice spacing a) are $\alpha$
 
-```math
-$$
-\displaylines{
- a_1=\begin{pmatrix}1&0&0\end{pmatrix} \\
- a_2=\begin{pmatrix}0&1&0\end{pmatrix} \\
+
+$$ \begin{align*}
+ a_1=\begin{pmatrix}1&0&0\end{pmatrix} \cr
+ a_2=\begin{pmatrix}0&1&0\end{pmatrix} \cr
  a_3=\begin{pmatrix}0&0&1\end{pmatrix}
- }
- $$
-```
+\end{align*}
+$$
+
 
 In a body-centered cubic system they would be
 
-```math
-$$ \displaylines{
-a_1=\begin{pmatrix}1/2&1/2&-1/2\end{pmatrix}\\
-a_2=\begin{pmatrix}-1/2&1/2&1/2\end{pmatrix}\\
+$$ \begin{align*}
+a_1=\begin{pmatrix}1/2&1/2&-1/2\end{pmatrix}\cr
+a_2=\begin{pmatrix}-1/2&1/2&1/2\end{pmatrix}\cr
 a_3=\begin{pmatrix}1/2&-1/2&1/2\end{pmatrix}
-}$$
-```
+\end{align*}$$
 
 ...and in an fcc lattice they would be
 
-```math
-$$\displaylines{
-a_1=\begin{pmatrix}1/2&1/2&0\end{pmatrix}\\
-a_2=\begin{pmatrix}0&1/2&1/2\end{pmatrix}\\
+$$\begin{align*}
+a_1=\begin{pmatrix}1/2&1/2&0\end{pmatrix}\cr
+a_2=\begin{pmatrix}0&1/2&1/2\end{pmatrix}\cr
 a_3=\begin{pmatrix}1/2&0&1/2\end{pmatrix}
-}$$
-```
+\end{align*}$$
 
 Note that the conventional unit cell is often much larger, so make sure
 to take the primitive cell. Also note that anti-ferromagnetic order will
@@ -168,7 +164,9 @@ Beware: the coordinate system for the lattices has to be right-handed
 (due to some internal pySCF workings). If it is not, the code will
 report
 
-`  Lattice are not in right-handed coordinate system. Please correct your lattice vectors`
+```
+Lattice are not in right-handed coordinate system. Please correct your lattice vectors
+```
 
 In that case please swap the order of your lattice vectors until they
 are in the proper ordering.
