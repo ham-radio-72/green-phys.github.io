@@ -1,6 +1,6 @@
 # Configuration
 baseURL: 'https://green-phys.org/'
-title: 'Green: Embedding Framework for Quantum Many-Body simulations'
+title: 'Green: Embedding Framework'
 
 enableRobotsTXT: true
 enableGitInfo: true
