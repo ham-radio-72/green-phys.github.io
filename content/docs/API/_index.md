@@ -1,6 +1,7 @@
 ---
-title: Documentation
-weight: 4
+title: API Documentation
+weight: 9
+icon: api
 ---
 
 ## Green Package consists of the following components
