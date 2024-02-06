@@ -7,7 +7,7 @@ enableGitInfo: true
 enableEmoji: true
 hasCJKLanguage: true
 enableInlineShortcodes: true
-
+copyright: University of Michigan
 
 outputs:
   home: [HTML]
@@ -41,6 +41,8 @@ params:
       path: logo/rosetta.png
       dark: logo/rosetta.png
       width: 36px
+  footer:
+    displayCopyright: true
 
 menu:
   main:
@@ -61,3 +63,8 @@ menu:
       url: "https://github.com/Green-Phys"
       params:
         icon: github
+    - name: Toggle
+      weight: 7
+      params:
+        type: toggle
+        icon: sun
