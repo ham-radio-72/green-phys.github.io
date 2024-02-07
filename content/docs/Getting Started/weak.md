@@ -2,14 +2,15 @@
 title: Running weak-coupling simulations
 linkTitle: GF2/GW
 weight: 2
-next: /docs/examples/si
+prev: "/docs/Getting\ Started/"
+next: "/docs/Getting\ Started/examples/Si"
 ---
 
 ### Preparing input data
 
 The first step of any simulations with `Green`/`WeakCoupling` is the preparation of the input data, which includes the calculation of the Coulomb and one-body integrals as well as a starting density matrix out of geometry, atom, k-point, and basis information.
 Currently  we use an interface with [PySCF](https://pyscf.org/) to prepare input data.
-To generate input data a user has to call the `python/init_data_df.py` script located in the source directory (for a simple example see below).
+To generate input data a user has to call the `python/init_data_df.py` script located in the source directory (for a simple example see [next page](/docs/getting-started/examples/si)).
 The following parameters are mandatory:
 
   - `--a`  path to a file containing crystal geometry in xyz format

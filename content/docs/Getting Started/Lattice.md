@@ -2,6 +2,8 @@
 title: Lattice Parameters and Geometries
 weight : 14
 math: true
+prev: "/docs/Getting\ Started/examples/Si"
+next: "/docs/Installation"
 ---
 
 ## Getting the lattice parameters

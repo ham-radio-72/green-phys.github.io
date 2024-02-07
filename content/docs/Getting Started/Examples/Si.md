@@ -3,6 +3,8 @@ title: Minimal example for running Silicon
 linkTitle: Silicon scGW band-structure
 weight: 1
 icon: silicon
+prev: "/docs/Getting\ Started/weak"
+next: "/docs/Getting\ Started/lattice"
 ---
 
 Here we provide a simple example on how to run `Green`/`Weakcoupling` on the example of a periodic silicon on `2x2x2` lattice. Change to a new directory where you will keep your simulations, create a directory for the Si simulation, and create the file `a.dat` containing the following unit cell information:

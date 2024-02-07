@@ -17,6 +17,9 @@ outputs:
 defaultContentLanguage: en
 
 module:
+  hugoVersion:
+    extended: true
+    min: "0.112.0"
   imports:
     - path: github.com/imfing/hextra
 
@@ -32,6 +35,8 @@ params:
     # light | dark | system
     default: system
     displayToggle: true
+  page:
+    width: normal
   editURL:
     enable: true
     base: "https://github.com/Green-Phys/green-phys.github.io/edit/main"

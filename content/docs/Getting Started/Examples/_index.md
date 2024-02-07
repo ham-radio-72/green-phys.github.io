@@ -3,8 +3,8 @@ title: Examples
 linkTitle: Examples
 weight: 3
 icon: rocket-launch
-prev: /docs/getting-started/weak
-next: /docs/getting-started/lattice
+prev: "/docs/Getting\ Started/weak"
+next: "/docs/Getting\ Started/examples/Si"
 ---
 
 {{< hextra/feature-grid maxcolumns="2" >}}

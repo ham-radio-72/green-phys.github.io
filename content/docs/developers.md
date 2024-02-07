@@ -4,7 +4,8 @@ weight: 4
 icon: user-group
 ---
 
-{{< person name="Emanuel Gull" contact="egull#umich.edu" title="Group leader" head="/headshots/egull.jpg" />}}
+{{< person name="Emanuel Gull" contact="egull#umich.edu" title="Primary Investigator" head="/headshots/egull.jpg" />}}
+{{< person name="Dominika Zgid" contact="zgid#umich.edu" title="Co-Primary Investigator" head="/headshots/zgid.jpg" />}}
 {{< person name="Sergei Iskakov" contact="siskakov#umich.edu" title="Lead developer" head="/headshots/siskakov.jpg" >}}
    - Implementation of Core Framework
    - GF2/GW implementation

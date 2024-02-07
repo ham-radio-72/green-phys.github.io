@@ -8,7 +8,7 @@ icon: home
   {{< hextra/feature-card
     title="Installation"
     subtitle="Installation instruction."
-    link="installation/installation"
+    link="installation"
     icon="cog"
   >}}
   {{< hextra/feature-card

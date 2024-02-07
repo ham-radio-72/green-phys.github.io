@@ -1,6 +1,8 @@
 ---
 title: Getting Started
 linkTitle: Getting Started
+next: "/docs/Getting\ Started/weak"
+prev: "/docs"
 weight: 1
 icon: rocket-launch
 ---
@@ -18,12 +20,12 @@ icon: rocket-launch
   >}}
   {{< hextra/feature-card
     title="Geometries"
-    subtitle=""
+    subtitle="Information on how to specify lattice geometries"
     link="lattice"
   >}}
   {{< hextra/feature-card
     title="Installation"
-    subtitle=""
+    subtitle="Installation instructions from sources on Linux"
     link="../installation/installation"
   >}}
 {{< /hextra/feature-grid >}}
