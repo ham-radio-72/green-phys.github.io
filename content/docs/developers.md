@@ -4,115 +4,29 @@ weight: 4
 icon: user-group
 ---
 
-{{< columns >}}
-
-
-## Emanuel Gull
-
-### Group leader
-
-Contact: egull#umich.edu
-
-<--->
-
-{{< figure src="/headshots/egull.jpg" width="150px" >}}
-
-{{< /columns >}}
-
-***
-
-{{< columns >}}
-
-## Sergei Iskakov
-
-### Main developer
-
+{{< person name="Emanuel Gull" contact="egull#umich.edu" title="Group leader" head="/headshots/egull.jpg" />}}
+{{< person name="Sergei Iskakov" contact="siskakov#umich.edu" title="Lead developer" head="/headshots/siskakov.jpg" >}}
    - Implementation of Core Framework
    - GF2/GW implementation
    - SEET implementation
    - Analytical continuation package implementation
+{{< /person >}}
 
-<--->
-
-{{< figure src="/headshots/siskakov.jpg" width="150px" >}}
-
-{{< /columns >}}
-
-***
-
-{{< columns >}}
-
-## Chia-Nan Yeh
-
-### Main contribution
+{{< person name="Chia-Nan Yeh"  title="Contribution" head="/headshots/cnyeh.jpg" >}}
    - Original implementation of GW solver
    - SEET implementation
    - Implementation of relativistic effects
+{{< /person >}}
 
-<--->
-
-{{< figure src="/headshots/cnyeh.jpg" width="150px" >}}
-
-{{< /columns >}}
-
-***
-
-{{< columns >}}
-
-## Jia Li
-
-### Contribution
-
+{{< person name="Jia Li"  title="Contribution" head="/headshots/jli.jpg" >}}
    - Non equidistant grid library
+{{< /person >}}
 
-<--->
 
-{{< figure src="/headshots/jli.jpg" width="150px" >}}
-
-{{< /columns >}}
-
-***
-
-{{< columns >}}
-
-## Pavel Pokhilko
-
-### Contribution
-
+{{< person name="Pavel Pokhilko"  title="Contribution" head="/headshots/pokhilko.jpg" >}}
    - Two particle density matrices
+{{< /person >}}
 
-<--->
+{{< person name="Yang Yu" head="/headshots/umyangyu.jpg" />}}
 
-{{< figure src="/headshots/pokhilko.jpg" width="150px" >}}
-
-{{< /columns >}}
-
-***
-
-
-{{< columns >}}
-
-## Yang Yu
-
-
-<--->
-
-{{< figure src="/headshots/umyangyu.jpg" width="150px" >}}
-
-{{< /columns >}}
-
-***
-
-
-{{< columns >}}
-
-## Runxue Yu
-
-
-<--->
-
-{{< figure src="/headshots/runxueyu.jpg" width="150px" >}}
-
-{{< /columns >}}
-
-***
+{{< person name="Runxue Yu" head="/headshots/runxueyu.jpg" />}}

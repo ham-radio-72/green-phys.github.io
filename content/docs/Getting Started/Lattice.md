@@ -1,6 +1,5 @@
 ---
 title: Lattice Parameters and Geometries
-permalink: /Getting_Started_–_Lattice_Parameters_and_Geometries/
 weight : 14
 math: true
 ---
@@ -106,7 +105,7 @@ environment, using a modification of the following script. Replace the
 unit cell parameters and atom positions with the information you find in
 the materialsproject or karlsruhe databases.
 
-```Python
+```python
 import numpy as np
 from ase.spacegroup import crystal
 from ase.spacegroup import Spacegroup
@@ -178,7 +177,7 @@ high-symmetry path. To do this, you can follow the steps outlined below
 (you can also refer to this paper for more information about k-paths:
 <https://doi.org/10.1016/j.commatsci.2010.05.010>):
 
-```Python
+```python
 import numpy as np
 from ase.dft.kpoints import get_special_points, bandpath, special_paths
 # Define lattice vectors in Cartesian coordinates 

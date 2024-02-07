@@ -1,6 +1,7 @@
 ---
 title: Contribution policy
 weight: 5
+icon: thumb-up
 ---
 
 Contribution to any part of the Green project is open for every user.
@@ -128,8 +129,8 @@ tend towards long pages and make documentation overly big and unfocused.
 formatting, style and changes consistent with the rest of the page.
 
 
-## CoC
+## Code of Conduct
 
-This project has a [CoC]. Please adhere to it while contributing to `Green`.
+This project has a [Code of Conduct](https://github.com/Green-Phys/green-mbpt?tab=coc-ov-file#readme). Please adhere to it while contributing to `Green`.
 
 

@@ -2,6 +2,7 @@
 title: Running weak-coupling simulations
 linkTitle: GF2/GW
 weight: 2
+next: /docs/examples/si
 ---
 
 ### Preparing input data

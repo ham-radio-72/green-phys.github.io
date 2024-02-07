@@ -1,0 +1,33 @@
+{{- $contact := (.Get "contact" | lower) }}
+{{- $name := .Get "name" }}
+{{- $title := .Get "title" }}
+{{- $head := .Get "head" }}
+
+
+<div class="gdoc-columns gdoc-columns--regular flex flex-gap flex-mobile-column">
+<div style="display: inline-block; width:600px">
+<h2>{{- $name }}</h2>
+
+{{- if $title }}
+<h3>{{- $title }}</h3>
+{{- end }}
+
+{{- if .Inner }}
+{{- with .Inner }}
+{{ . | $.Page.RenderString -}}
+{{- end }}
+{{- end }}
+
+{{- if $contact }}
+<p>Contact:&nbsp;{{- $contact }}</p>
+{{- end }}
+<br/>
+</div>
+
+<div style="display: inline-block; width:200px">
+<figure>
+<img src="{{- $head }}" width="150px"/>
+</figure>
+</div>
+</div>
+<hr/>

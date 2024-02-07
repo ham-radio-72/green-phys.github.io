@@ -1,7 +1,7 @@
 ---
 title: 
 linkTitle: Green Documentation
-.. permalink: /Main_Page/
+layout: green-home
 ---
 
 # Welcome to the Green software package
@@ -24,7 +24,7 @@ content.
 -   Getting Started – General Considerations
 -   Getting Started – Basis sets and Basis functions
 -   [Getting Started – Lattice Parameters and
-    Geometries](/docs/getting-started/lattice_parameters_and_geometries "wikilink")
+    Geometries](/docs/getting-started/lattice "wikilink")
 -   [Getting Started – Running Density Functional
     Theory](/docs/legacy/running_density_functional_theory "wikilink")
 -   [Getting Started – Running GW in the non-relativistic

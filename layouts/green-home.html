@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <div class='mx-auto flex {{ partial "utils/page-width" . }}'>
+    <aside style="width:20%" class="sponsor-container flex flex-col print:hidden md:top-16 md:shrink-0 md:w-64 md:self-start md:sticky max-md:[transform:translate3d(0,-100%,0)]" >
+      <br/>
+      <figure style="text-align: center;width:100%;"><img src="logo/rosetta.png" /></figure>
+      <figure style="text-align: center;width:100%;"><img src="logo/NSF.png" />
+      <figurecaption style="text-align: center;width:100%;"><b>Supported by <br/>NSF-CSSI-2310582</b></figurecaption>
+      </figure>
+    </aside>
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
+    {{ partial "toc.html" . }}
+    <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+        <h1 class="text-center mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{{ .Title }}</h1>
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </main>
+    </article>
+  </div>
+{{ end }}

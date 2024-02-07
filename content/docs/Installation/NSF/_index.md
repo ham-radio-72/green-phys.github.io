@@ -1,11 +1,9 @@
 ---
-title: Installation on NSF machine
+title: Installation on NSF machines
 weight: 1
 ---
 
 ### Green has been tested on the following NSF-managed machines
-
-   - [SDSC Expanse](/user-guide/installation/nsf/expanse/)
 
 {{< hextra/feature-grid maxcolumns="2" >}}
   {{< hextra/feature-card

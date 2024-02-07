@@ -19,7 +19,7 @@ icon: rocket-launch
   {{< hextra/feature-card
     title="Geometries"
     subtitle=""
-    link="lattice_parameters_and_geometries"
+    link="lattice"
   >}}
   {{< hextra/feature-card
     title="Installation"
