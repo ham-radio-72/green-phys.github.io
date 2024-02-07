@@ -14,7 +14,7 @@ icon: rocket-launch
     link="weak"
   >}}
   {{< hextra/feature-card
-    title="Exmaples"
+    title="Examples"
     subtitle="Simple examples on running Green codes"
     link="examples"
   >}}
