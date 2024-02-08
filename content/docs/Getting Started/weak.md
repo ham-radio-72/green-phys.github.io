@@ -64,16 +64,6 @@ thermodynamic utilities to obtain thermodynamic quantities.
 
 To obtain the spectral representation of a Green's function, the `Green` software stack provides an analytical continuation package.
 
-```ShellSession
-  $ git clone https://github.com/Green-Phys/green-ac.git
-  $ mkdir build
-  $ cd build
-  $ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/path/to/install/directory ../green-ac
-  $ make -j 4 && make test && make install
-```
-
-This will install the `Green`/`Continuation` package into `/path/to/install/directory`.
-
 To run the analytical continuation one have to execute the program `ac.exe` located at the installation path in the `bin` subdirectory.
 The following parameters are required:
   - `--grid_file`  Sparse imaginary time/frequency grid file name
@@ -84,5 +74,3 @@ The following parameters are required:
   - `--kind`  Type of analytical continuation, currently only `NEVANLINNA` is implemented.
 
 The command `ac.exe --help` will provide additional information.
-
-

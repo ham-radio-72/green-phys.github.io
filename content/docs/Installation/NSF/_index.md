@@ -1,5 +1,5 @@
 ---
-title: Installation on NSF machines
+title: NSF machines
 weight: 1
 ---
 

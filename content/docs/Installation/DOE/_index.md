@@ -1,5 +1,5 @@
 ---
-title: Installation on DOE machines
+title: DOE machines
 weight: 2
 ---
 
