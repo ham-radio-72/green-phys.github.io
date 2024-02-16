@@ -51,14 +51,20 @@ params:
 
 menu:
   main:
+    - identifier: install
+      name: Install
+      pageRef: /docs/installation
+      weight: 1
+      params:
+        type: button
     - identifier: documentation
       name: Documentation
       pageRef: /docs
-      weight: 1
+      weight: 3
     - identifier: about
       name: About
       pageRef: /about
-      weight: 2
+      weight: 4
     - name: Search
       weight: 5
       params:

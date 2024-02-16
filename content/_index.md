@@ -11,6 +11,14 @@ This project is currently under active development. Content of this web-site wil
 regularly updated. The package was first released on Nov. 1st, 2023 and can now be downloaded from our repositories.
 
 <br/>
+
+<div class="mb-6">
+{{< cta-button text="Quick Start" link="docs/getting-started/examples/si/" icon="rocket_launch" prim="yes" >}}
+{{< cta-button text="Documentation" link="docs/" icon="book" >}}
+</div>
+
+
+
 <hr>
 
   ### <p style="text-align: center;">Key project features</p>
