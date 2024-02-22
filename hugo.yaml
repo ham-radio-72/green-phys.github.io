@@ -52,7 +52,7 @@ params:
 menu:
   main:
     - identifier: install
-      name: Install
+      name: Installation
       pageRef: /docs/installation
       weight: 1
       params:

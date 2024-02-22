@@ -37,4 +37,8 @@ icon: user-group
 
 {{< person name="Yang Yu" head="/headshots/umyangyu.jpg" />}}
 
+{{< person name="Tianran Chen" head="/headshots/tchen.jpg" />}}
+
+{{< person name="Lei Zhang" head="/headshots/lzphy.jpg" />}}
+
 {{< person name="Runxue Yu" head="/headshots/runxueyu.jpg" />}}
