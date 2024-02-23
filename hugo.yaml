@@ -39,7 +39,7 @@ params:
     width: normal
   editURL:
     enable: true
-    base: "https://github.com/Green-Phys/green-phys.github.io/edit/main"
+    base: "https://github.com/Green-Phys/green-phys.github.io/edit/main/content"
   navbar:
     displayLogo: true
     logo:
