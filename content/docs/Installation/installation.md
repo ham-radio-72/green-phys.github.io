@@ -11,7 +11,7 @@ weight: 1
 
 {{% steps %}}
 
-### Prerequisites:
+### Prerequisites: HPC libraries and tools
 Please make sure to have the following third-party software installed and available:
 
   * Third-Party Dependencies
@@ -25,7 +25,7 @@ Please make sure to have the following third-party software installed and availa
     These packages are external to Green. Their installation will depend on your computer. Eigen3 is a C++ matrix library, you can find more information [here](https://eigen.tuxfamily.org/). MPI is the Message Passing Interface, several standard implementations exist, including [OpenMPI](https://www.open-mpi.org/) and [MPICH](https://www.mpich.org/). High performance computers will have proprietary MPI installations, and most clusters provide a version for all users. [HDF5](https://www.hdfgroup.org/solutions/hdf5/) is a library for binary data storage. More information on  BLAS, the Basic Linear Algebra System, can be found on [netlib.org](netlib.org). However, most computers provide highly optimized versions tuned for their respective hardware. Do NOT install the reference BLAS from netlib but instead have a look at a generic high-performance implementation from [OpenBLAS](https://www.openblas.net/) and the hardware-specific vendor libraries (among many others: [Apple](https://developer.apple.com/documentation/accelerate/blas/), [Intel MKL/OneAPI](https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html), [AMD AOCL](https://www.amd.com/en/developer/aocl.html), [IBM ESSL](https://www.ibm.com/docs/en/essl/6.2?topic=whats-new)).
     [Cmake](https://cmake.org/) is a build system that will find the locations of the above packages and generate compilation instructions in Makefiles. [CUDA](https://developer.nvidia.com/cuda-toolkit) is an Nvidia GPU development environment.
 
-### Prerequisites:
+### Prerequisites: Python Libraries
 Please make sure to have python and the following python packages available:
 
    * Third-Party Dependencies
@@ -39,8 +39,8 @@ Please make sure to have python and the following python packages available:
   ```
    The preferred python version is 3 (any minor version should work). Note that some installations use pip3 instead of pip, for help on python package installation see https://pypi.org/project/pip/ .
 
-### Download and Build
-The following instructions will download and build the Many-Body Perturbation theory solver (replace /path/to/install/directory with the directory where you'd like to install the code):
+### Download and Build: CPU version
+The following instructions will download and build the CPU-only version of the Many-Body Perturbation theory solver (replace /path/to/install/directory with the directory where you'd like to install the code):
 
   ```ShellSession
   $ git clone https://github.com/Green-Phys/green-mbpt
@@ -65,7 +65,7 @@ After successfully building the code, you will need to install it. The install l
   ```
 Your install directory will be created; if everything was successful you can find the executable mbpt.exe under the bin directory of your installation path.
 
-### Enabling NVidia GPU kernels
+### Download and Build: Nvidia GPU kernels
 
 To enable GPU kernels many-body perturbation framework uses the follextension points. By setting following CMake parameters:
    - `GREEN_KERNEL_URL="https://github.com/Green-Phys/green-gpu"`
@@ -91,8 +91,8 @@ The following instructions will download and build the Many-Body Perturbation th
 
 {{% /steps %}}
 
-### The code has been tested on the following nationwide HPC resources:
-
+### Download and Build: National HPC Resources
+The code has been successfully built and tested on National HPC resources. Instructions for the compilation on these machines are provided below:
   - [NSF (ACCESS) Machines](/user-guide/installation/nsf/)
     - [SDSC Expanse](/user-guide/installation/nsf/expanse/)
   - [DOE Machines](/user-guide/installation/doe/)
@@ -110,7 +110,7 @@ The following instructions will download and build the Many-Body Perturbation th
 
 {{% steps %}}
 
-### Prerequisites:
+### Prerequisites: HPC libraries and tools
 Please make sure to have the following third-party software installed and available:
 
   * Third-Party Dependencies
