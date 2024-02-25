@@ -67,7 +67,7 @@ Your install directory will be created; if everything was successful you can fin
 
 ### Download and Build: Nvidia GPU kernels
 
-To enable GPU kernels many-body perturbation framework uses the follextension points. By setting following CMake parameters:
+GPU kernels for the many-body perturbation framework use extensions from a custom repository. You enable the GPU kernels by setting following CMake parameters:
    - `GREEN_KERNEL_URL="https://github.com/Green-Phys/green-gpu"`
    - `GREEN_CUSTOM_KERNEL_LIB="GREEN::GPU"`
    - `GREEN_CUSTOM_KERNEL_ENUM=GPU `
