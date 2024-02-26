@@ -15,8 +15,8 @@ There are three options to contribute
 ## Submit an issue
 
 If you found a bug or want new feature to be implemented, each Green project
-has an `Issue` tab where you can submit related information. There are to templates
-one for Bug report and one for a new feature request. Please try to 
+has an `Issue` tab where you can submit related information. There are two templates,
+one for Bug reports and one for a new feature requests. Please try to 
 put a detailed and reproducible description.
 
 
@@ -25,10 +25,9 @@ put a detailed and reproducible description.
 Ongoing development happens in the `devel` branch for all `Green` projects.
 
 Commits should be small and atomic. A commit is atomic when, after it is
-applied, the codebase, tests and all, still works as expected. Small
+applied, the codebase, tests and all, still work as expected. Small
 commits are also preferred, as they make later operations with git history,
 whether it is bisecting, reverting, or something else, easier.
-
 
 When addressing review comments in a PR, please do not rebase/squash the
 commits immediately. Doing so makes it harder to review the new changes,
