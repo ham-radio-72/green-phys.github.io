@@ -79,41 +79,37 @@ Specifically, every source file should start with the MIT copyright header:
  * DEALINGS IN THE SOFTWARE.
  */
 ```
-Please, set proper year to the copyright header and name of copyright holders.
+Please adjust the year in the copyright header and enter the name of the copyright holders.
 
 
 The include guards for header files should follow the pattern `{PROJECT}_{FILENAME}_H`.
-This means that for file `new_feature.h` in project `green-sc`, the include guard should
+This means that for the file `new_feature.h` in the project `green-sc`, the include guard should
 be `SC_NEW_FEATURE_H`, for `another_feature.h` in project `green-mbpt`, the include
 guard should be `MBPT_ANOTHER_FEATURE_H`, and so on.
 
 
 ### Testing your changes
 
-All `Green` projects are tested in our CI environment.
+All `Green` projects are automatically tested in our CI environment.
 If you propose new changes to the code, please implement tests that show that
-these changes works as intended. 
+these changes work as intended. 
 
+We understand that not all tests can be written as plain unit tests. 
+For example, checking self-consistent iterations requires running small simulations.
+This is better done as an integration test. 
 
-We understand, that not all tests can be written as plain unit tests. 
-For example, checking self-consistent iterations requires runnin small simulations,
-and it is better done as an integration test. 
-
-`Green` unit andd integration tests are written using Catch2 framework, 
-and called through `make test` command after build.
-
-
+`Green` unit and integration tests are written using the Catch2 framework, 
+and called via the command `make test` once the code is built.
 
 ## Writing documentation
 
-If you have added new feature to `Green` projects, it needs documentation, 
-so that other people can use it as well. If you found some feature that has 
-not been properly documented, you are welcome to propose a feature description.
+If you have added new features to `Green` projects, please document them, 
+so that other people can use them as well. If you found some feature that has 
+not been properly documented, you are welcome to let us know and propose a feature description.
 
-
-Main documentation for all `Green` projects is located on [Green web-site](https://green-phys.org).
-We use [Hugo](https://github.com/gohugoio/hugo) framework with [relearn](https://github.com/McShelby/hugo-theme-relearn) theme.
-All documentation uses MarkDown format.
+The main documentation for all `Green` projects is located at [Green web-site](https://green-phys.org).
+We use the [Hugo](https://github.com/gohugoio/hugo) framework with the [relearn](https://github.com/McShelby/hugo-theme-relearn) theme.
+All documentation uses the MarkDown format.
 
 
 ### Contents
@@ -122,10 +118,10 @@ All documentation uses MarkDown format.
 can make the documentation less readable, and so the inline snippets
 should be kept reasonably short.
 
-* Don't be afraid to introduce new pages. This will avoid documentation
-tend towards long pages and make documentation overly big and unfocused.
+* Don't be afraid to introduce new pages. This will avoid long pages in the documentation
+which may make the documentation unfocused.
 
-* When adding information to an existing page, please try to keep your
+* When adding information to an existing page, please try to keep the 
 formatting, style and changes consistent with the rest of the page.
 
 
