@@ -1,4 +1,5 @@
 
 # Acknowledgements
 
-This work is supported by National Science Foundation under the award CSSI-2310582
+This work is supported by the US National Science Foundation as part of the NSF CSSI program under the award NSF OAC-2310582
+
