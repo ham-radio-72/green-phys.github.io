@@ -62,7 +62,7 @@ atoms of the same type.
 ## The example of MnO
 
 As an example, consider MnO. According to the materials databases the
-material is cubic, crystallizing in the space group Fm-3m   (225). The
+material is cubic, crystallizing in the space group Fm-3m   (225). The
 lattice distance is
 
 `a=4.446`
@@ -84,18 +84,18 @@ atoms.
 `atoms.dat:`
 
 ```
-Mn 0.0 0.0 0.0
-O 2.22250, 2.22250, 2.22250
-Mn 4.44500, 4.44500, 4.44500
-O 6.66750, 6.66750, 6.66750
+Mn 0.0 0.0 0.0
+O 2.22250, 2.22250, 2.22250
+Mn 4.44500, 4.44500, 4.44500
+O 6.66750, 6.66750, 6.66750
 ```
 
 `a.dat:`
 
 ```
-4.44500 2.22250 2.22250
-2.22250 4.44500 2.22250
-2.22250 2.22250 4.44500
+4.44500 2.22250 2.22250
+2.22250 4.44500 2.22250
+2.22250 2.22250 4.44500
 ```
 
 ## Using ASE scripts to determine lattice geometry and atom positions
@@ -108,54 +108,54 @@ unit cell parameters and atom positions with the information you find in
 the materialsproject or karlsruhe databases.
 
 ```python
-import numpy as np
-from ase.spacegroup import crystal
-from ase.spacegroup import Spacegroup
+import numpy as np
+from ase.spacegroup import crystal
+from ase.spacegroup import Spacegroup
 
-# Unit cell parameters
-a, b, c = 4.0834, 4.0834, 4.0834
-alpha, beta, gamma = 90, 90, 90
-group = 225
+# Unit cell parameters
+a, b, c = 4.0834, 4.0834, 4.0834
+alpha, beta, gamma = 90, 90, 90
+group = 225
 
 '''
-Construct unit cell. 
-a) if primite_cell=False, a convention unit cell will be generated.
-b) bases should be given in units of a, b, c 
+Construct unit cell. 
+a) if primite_cell=False, a convention unit cell will be generated.
+b) bases should be given in units of a, b, c 
 '''
 
-cc = crystal(symbols=['Li','H'],
-             basis=[(0.0, 0.0, 0.0),(0.5, 0.5, 0.5)],
-             spacegroup=group,
-             cellpar=[a, b, c, alpha, beta, gamma], primitive_cell=True)
+cc = crystal(symbols=['Li','H'],
+             basis=[(0.0, 0.0, 0.0),(0.5, 0.5, 0.5)],
+             spacegroup=group,
+             cellpar=[a, b, c, alpha, beta, gamma], primitive_cell=True)
 
-# Lattice vector
+# Lattice vector
 print(cc.get_cell())
 
-# Atoms inside the unit cell
+# Atoms inside the unit cell
 print(cc.get_chemical_symbols())
 
-# Atom positions  
+# Atom positions  
 print(cc.get_positions())
 
-# Special k points
+# Special k points
 '''
-Get Bravais lattice of unit cell cc. 
-Note that the Bravais lattice of a conventional unit cell is different 
-from the one of a primitive unit cell. So does the special points. 
+Get Bravais lattice of unit cell cc. 
+Note that the Bravais lattice of a conventional unit cell is different 
+from the one of a primitive unit cell. So does the special points. 
 '''
-lat = cc.cell.get_bravais_lattice()
+lat = cc.cell.get_bravais_lattice()
 
-# Special k points
+# Special k points
 print(lat.get_special_points())
 
-# k-path
-path = cc.cell.bandpath('GX', npoints=50)
+# k-path
+path = cc.cell.bandpath('GX', npoints=50)
 
-# The kpoints are given in units of the reciprocal lattice vector.
-print("Size of k-path: ", path.kpts.shape)
+# The kpoints are given in units of the reciprocal lattice vector.
+print("Size of k-path: ", path.kpts.shape)
 
-# Details of the space group
-sp = Spacegroup(group)
+# Details of the space group
+sp = Spacegroup(group)
 print(sp)
 ```
 
@@ -166,7 +166,7 @@ Beware: the coordinate system for the lattices has to be right-handed
 report
 
 ```
-Lattice are not in right-handed coordinate system. Please correct your lattice vectors
+Lattice are not in right-handed coordinate system. Please correct your lattice vectors
 ```
 
 In that case please swap the order of your lattice vectors until they
@@ -180,40 +180,40 @@ high-symmetry path. To do this, you can follow the steps outlined below
 <https://doi.org/10.1016/j.commatsci.2010.05.010>):
 
 ```python
-import numpy as np
-from ase.dft.kpoints import get_special_points, bandpath, special_paths
-# Define lattice vectors in Cartesian coordinates 
-lattice_vectors = np.array([[4.1705 , 2.08525, 2.08525], 
-                            [2.08525, 4.1705 , 2.08525], 
-                            [2.08525, 2.08525, 4.1705 ]])
-  
-# Output high symmetry points in reciprocal lattice vector units
-high_symmetry_points = get_special_points(lattice_vectors)
-print("Available high symmetry points are:\n", high_symmetry_points, '\n')
- 
-# Output default high symmetry path
-default_path = special_paths["rhombohedral type 1"]
-print("Default high symmetry path is:\n", default_path, '\n')
- 
-# Specify high symmetry points along the desired path
-# Note: ',' denotes a jump between neighboring points, meaning no 
-# additional points will be sampled between them
-path = "GLB1,BZGX,QFP1Z,LP" 
-num_points = 200 # Define the total number of points 
- 
-# Generate high symmetry path
-kpath = bandpath(path, lattice_vectors, npoints=num_points) 
-path, special_points, labels = kpath.get_linear_kpoint_axis() 
-print("Scaled high symmetry points along the path are:\n", kpath.kpts, '\n')
- 
-# The following postprocessing allows the path, special_points, and labels 
-# to be directly used for plotting.
+import numpy as np
+from ase.dft.kpoints import get_special_points, bandpath, special_paths
+# Define lattice vectors in Cartesian coordinates 
+lattice_vectors = np.array([[4.1705 , 2.08525, 2.08525], 
+                            [2.08525, 4.1705 , 2.08525], 
+                            [2.08525, 2.08525, 4.1705 ]])
 
-# Find indices where adjacent elements in special_points are equal
+# Output high symmetry points in reciprocal lattice vector units
+high_symmetry_points = get_special_points(lattice_vectors)
+print("Available high symmetry points are:\n", high_symmetry_points, '\n')
+
+# Output default high symmetry path
+default_path = special_paths["rhombohedral type 1"]
+print("Default high symmetry path is:\n", default_path, '\n')
+
+# Specify high symmetry points along the desired path
+# Note: ',' denotes a jump between neighboring points, meaning no 
+# additional points will be sampled between them
+path = "GLB1,BZGX,QFP1Z,LP" 
+num_points = 200 # Define the total number of points 
+
+# Generate high symmetry path
+kpath = bandpath(path, lattice_vectors, npoints=num_points) 
+path, special_points, labels = kpath.get_linear_kpoint_axis() 
+print("Scaled high symmetry points along the path are:\n", kpath.kpts, '\n')
+
+# The following postprocessing allows the path, special_points, and labels 
+# to be directly used for plotting.
+
+# Find indices where adjacent elements in special_points are equal
 indices = np.where(special_points[:-1] == special_points[1:])[0]
-# For each index, create a combined label and replace the original label with it
-for index in indices:
-    combined_label = labels[index] + "|" + labels[index+1]
-    labels[index] = ""
-    labels[index+1] = combined_label
+# For each index, create a combined label and replace the original label with it
+for index in indices:
+    combined_label = labels[index] + "|" + labels[index+1]
+    labels[index] = ""
+    labels[index+1] = combined_label
 ```
