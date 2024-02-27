@@ -210,7 +210,7 @@ print("Scaled high symmetry points along the path are:\n", kpath.kpts, 
 # to be directly used for plotting.
 
 # Find indices where adjacent elements in special_points are equal
-indices = np.where(special_points[:-1] == special_points[1:])[0]
+indices = np.where(special_points[:-1] == special_points[1:])[0]
 # For each index, create a combined label and replace the original label with it
 for index in indices:
     combined_label = labels[index] + "|" + labels[index+1]
