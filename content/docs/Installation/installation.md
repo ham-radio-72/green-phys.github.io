@@ -119,9 +119,9 @@ Please make sure to have the following third-party software installed and availa
     - HDF5 >= 1.10.0
     - BLAS
     - CMake >= 3.18
-    - MPFR
+    - GMP
 
-    These packages are the same as the ones required for the mbpt code, except for MPFR. MPFR is a multiple-precision floating-point library. If it is installed but your compiler does not find it automatically, try setting the environment variables GMPDIR and MPFRDIR or use -DMPFR_DIR to specify the directory where cmake should look for mpfr.h and the mpfr and gmp libraries. 
+These packages are the same as the ones required for the mbpt code, except for GMP. [GMP](https://gmplib.org/) is a multiple-precision floating-point library. If it is installed but your compiler does not find it automatically, try setting the environment variable GMP_DIR to specify the directory where cmake should look for gmp.h and the gmp libraries.
 
 ### Download and Build
 The following instructions will download and build the Analytical Continuation package (replace /path/to/install/directory with the directory where you'd like to install the code):
@@ -139,6 +139,7 @@ If you have a non-standard installation location of the dependent packages insta
   - For MPI: Follow the instructions on [cmake with mpi](https://cmake.org/cmake/help/latest/module/FindMPI.html)
   - For BLAS: Follow the instructions on [cmake with BLAS](https://cmake.org/cmake/help/latest/module/FindBLAS.html)
   - For HDF5: Follow the instructions on [cmake with HDF5](https://cmake.org/cmake/help/latest/module/FindHDF5.html)
+  - For GMP: specify in the environment variable `GMP_DIR`: `GMP_DIR=/path/to/gmp/installation`
 {{% /steps %}}
 
 
