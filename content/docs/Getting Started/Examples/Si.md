@@ -7,7 +7,8 @@ prev: "/docs/Getting\ Started/weak"
 next: "/docs/Getting\ Started/lattice"
 ---
 
-Here we provide a simple example on how to run `Green`/`Weakcoupling` on the example of a periodic silicon on `6x6x6` lattice. Change to a new directory where you will keep your simulations, create a directory for the Si simulation, and create the file `a.dat` containing the following unit cell information:
+
+Here we provide a simple example on how to run `Green`/`Weakcoupling` on the example of a periodic silicon on `6x6x6` lattice. Prerequisites: you must have both the mbpt and the ac executables compiled. Change to a new directory where you will keep your simulations, create a directory for the Si simulation, and create the file `a.dat` containing the following unit cell information:
 ```
 0.0,  2.7155, 2.7155
 2.7155, 0.0,  2.7155
@@ -58,3 +59,4 @@ This will read the analytically continued data and plot it to an `<output_dir>/b
 The expected band structure plot should look as following
 
 ![alt text](/tutorials/bands.png)
+
