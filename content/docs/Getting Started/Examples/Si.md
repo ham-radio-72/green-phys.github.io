@@ -45,6 +45,7 @@ To obtain the spectral function for silicon run
 ```
 <install dir>/bin/ac.exe  --BETA 100 --grid_file ir/1e4.h5    \
    --input_file Si_hs.h5 --output_file ac.h5 --group G_tau_hs \
+   --e_min -5.0 --e_max 5.0 --n_omega 4000 --eta 0.01
    --kind Nevanlinna
 ```
 This will run Nevanlinna analytical continuation for the data obtained at the `10`-th iteration for all `k`-points. The output will be stored in the group
@@ -52,7 +53,7 @@ This will run Nevanlinna analytical continuation for the data obtained at the `1
 
 A plot for the band structure can then be obtained with the `plot_bands.py` script:
 ```
-python <source root>/green-mbpt/python/plot_bands.py \ 
+python <source root>/green-mbpt/python/plot_bands.py \
         --input_file ac.h5 --output_dir bands
 ```
 This will read the analytically continued data and plot it to an `<output_dir>/bands.png` file. In addition, it will create a plain-text data file for every k-point along the chosen path inside the `<output_dir>` directory.
