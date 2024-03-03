@@ -55,6 +55,6 @@ python <source root>/green-mbpt/python/plot_bands.py \
         --input_file ac.h5 --output_dir bands
 ```
 This will read the analytically continued data and plot it to an `<output_dir>/bands.png` file. In addition, it will create a plain-text data file for every k-point along the chosen path inside the `<output_dir>` directory.
-The expected plot should look as follows
+The expected band structure plot should look as following
 
 ![alt text](/tutorials/bands.png)
