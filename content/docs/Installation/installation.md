@@ -44,8 +44,8 @@ The following instructions will download and build the CPU-only version of the M
 
   ```ShellSession
   $ git clone https://github.com/Green-Phys/green-mbpt
-  $ mkdir build
-  $ cd build
+  $ mkdir green-mbpt-build
+  $ cd green-mbpt-build
   $ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/path/to/install/directory ../green-mbpt
   $ make -j 4 && make test
   ```
@@ -77,8 +77,8 @@ The following instructions will download and build the Many-Body Perturbation th
 
   ```ShellSession
   $ git clone https://github.com/Green-Phys/green-mbpt
-  $ mkdir build
-  $ cd build
+  $ mkdir green-mbpt-build
+  $ cd green-mbpt-build
   $ cmake -DCMAKE_BUILD_TYPE=Release                                \
      -DCUSTOM_KERNEL=GPU_KERNEL                                     \
      -DGREEN_KERNEL_URL="https://github.com/Green-Phys/green-gpu"   \
