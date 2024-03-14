@@ -71,7 +71,7 @@ GPU kernels for the many-body perturbation framework use extensions from a custo
    - `GREEN_KERNEL_URL="https://github.com/Green-Phys/green-gpu"`
    - `GREEN_CUSTOM_KERNEL_LIB="GREEN::GPU"`
    - `GREEN_CUSTOM_KERNEL_ENUM=GPU `
-   - `GREEN_CUSTOM_KERNEL_HEADER=<green/gpu/gpu_factory.h>`
+   - `GREEN_CUSTOM_KERNEL_HEADER="<green/gpu/gpu_factory.h>"`
 
 The following instructions will download and build the Many-Body Perturbation theory solver with additional GPU kernels (replace /path/to/install/directory with the directory where you'd like to install the code):
 
