@@ -34,12 +34,52 @@ we set high-symmetry path to `WGXWLG` to reproduce results from [Phys. Rev. B 10
 
 
 After that we will run the `GW` approximation
+
+{{< tabs items="CPU, GPU" >}}
+
+{{< tab >}}
+
 ```
 <install dir>/bin/mbpt.exe --scf_type=GW --BETA 100       \
   --grid_file ir/1e4.h5 --itermax 10 --results_file Si.h5 \
   --high_symmetry_output_file Si_hs.h5 --jobs SC,WINTER
 ```
-Here we run the self-consistent `GW` approximation at inverse temperature $ \beta=100 $, we  use an `IR` nonuniform grid for $ \Lambda = 10^4 $ and run for 10 iterations. We then store bulk results into `Si.h5` file. After the self-consistent simulation is finished band-path interpolation  along the high-symmetry path will be evaluated and stored in `Si_hs.h5`.
+
+Here we run the self-consistent `GW` approximation at inverse temperature $ \beta=100 $, we use an `IR` nonuniform grid for $ \Lambda = 10^4 $ and run for 10 iterations.
+
+{{< /tab >}}
+
+{{< tab >}}
+
+```
+<install dir>/bin/mbpt.exe --scf_type=GW --BETA 100       \
+  --grid_file ir/1e4.h5 --itermax 10 --results_file Si.h5 \
+  --high_symmetry_output_file Si_hs.h5 --jobs SC,WINTER   \
+  --kernel GPU --cuda_low_gpu_memory true --cuda_low_cpu_memory true \
+  --Sigma_sp true --P_sp true
+```
+
+Here we run the self-consistent `GW` approximation at inverse temperature $ \beta=100 $, we use an `IR` nonuniform grid for $ \Lambda = 10^4 $ and run for 10 iterations.
+
+We set value for `--kernel` to `GPU` to run `CUDA` implementation. We set both CPU (`--cuda_low_cpu_memory true`) and GPU (`--cuda_low_gpu_memory true`) memory to low to avoid excessive memory allocation.
+
+If you are running this on a consumer GPU, floating point operations are often much faster in single
+precision than in double precision. We therefore additionally force the code to run in single precision: 
+```
+  --Sigma_sp=true --P_sp=true
+```
+such that both the calculation of the self-energy and of the polarization are performed in single precision. Note that on consumer cards such as Nvidia's Ampere generation, single precision 
+is 64x faster than double precision.
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+<br>
+<hr style="border:.5px solid gray">
+
+We then store bulk results into `Si.h5` file. After the self-consistent simulation is finished band-path interpolation  along the high-symmetry path 
+will be evaluated and stored in `Si_hs.h5`. 
 
 To obtain the spectral function for silicon run
 ```
