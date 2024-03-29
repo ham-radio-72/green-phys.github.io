@@ -43,7 +43,7 @@ Within a given subspace, DIIS seeks to find such coefficients that $||e_{extr}||
 **Somewhere here is does not render:**
 ```math
 L^{DIIS}(c,\lambda) = \frac{1}{2}\sum_{ij} c_i B_{ij} c_j - \lambda \left(1-\sum_i c_i\right), \\
-B_{ij} = \left<e_i, e_j \right>
+B_{ij} = < e_i, e_j >
 ```
 The necessary condition for a minimum found from direct differentiation of the Lagrangian is
 ```math
