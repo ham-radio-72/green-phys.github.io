@@ -32,7 +32,7 @@ v_i = v^* + e_i
 ```
 Thus, the vector extrapolation can be expressed as
 ```math
-v_{extr} = v^*\sum_i c_i + e_{extr}, \\
+v_{extr} = v^*\sum_i c_i + e_{extr}, \\\
 e_{extr} = \sum_i c_i e_i
 ```
 In order to converge the extrapolated vectors $v_{extr}$ to $v^*$, the extrapolation coefficients must add up to one $\sum_i c_i = 1$. This condition is sometimes called as a DIIS constraint since it is directly used in the formulation of DIIS below.
@@ -40,9 +40,8 @@ In order to converge the extrapolated vectors $v_{extr}$ to $v^*$, the extrapola
 **DIIS** (direct inversion in the iterative subspace) is the most common subspace convergence acceleration technique. While it was first developed to use for SCF, due to its generality, it has been also used to solve coupled-cluster amplitude equations as well as response equations. We implement the DIIS algorithm to accelerate iterations solving the Dyson equation. 
 
 Within a given subspace, DIIS seeks to find such coefficients that $||e_{extr}||$ is minimized. Since in practice the error vectors (residuals) $e_i$ are not known, approximate residuals are used instead (see below). The minimization problem for coefficients can be reformulated in terms of the Lagrangian
-**Somewhere here is does not render:**
 ```math
-L^{DIIS}(c,\lambda) = \frac{1}{2}\sum_{ij} c_i B_{ij} c_j - \lambda \left(1-\sum_i c_i\right), \\
+L^{DIIS}(c,\lambda) = \frac{1}{2}\sum_{ij} c_i B_{ij} c_j - \lambda \left(1-\sum_i c_i\right), \\\
 B_{ij} = < e_i, e_j >
 ```
 The necessary condition for a minimum found from direct differentiation of the Lagrangian is
