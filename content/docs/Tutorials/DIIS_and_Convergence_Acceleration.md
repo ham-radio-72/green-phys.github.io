@@ -42,11 +42,9 @@ In order to converge the extrapolated vectors $v_{extr}$ to $v^*$, the extrapola
 Within a given subspace, DIIS seeks to find such coefficients that $||e_{extr}||$ is minimized. Since in practice the error vectors (residuals) $e_i$ are not known, approximate residuals are used instead (see below). The minimization problem for coefficients can be reformulated in terms of the Lagrangian
 **Somewhere here is does not render:**
 ```math
-L^{DIIS}(c,\lambda) = \frac{1}{2}\sum_ij c_i B_{ij} c_j - \lambda \left(1-\sum_i c_i\right),
-```
-<!---
+L^{DIIS}(c,\lambda) = \frac{1}{2}\sum_{ij} c_i B_{ij} c_j - \lambda \left(1-\sum_i c_i\right), \\
 B_{ij} = \left<e_i, e_j \right>
--->
+```
 The necessary condition for a minimum found from direct differentiation of the Lagrangian is
 ```math
 \begin{pmatrix}
