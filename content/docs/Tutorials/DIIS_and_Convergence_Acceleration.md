@@ -22,7 +22,7 @@ initial guess &rarr; $\mu_1,G_1$ &rarr; $\Sigma[G_1]$ &rarr; mixed $\Sigma_1$ &r
 
 Smaller values of $\alpha$ stabilize iterations and lead to smaller changes between iterations. That's why this approach often converges when the direct iterations diverge. In our practice, it is often sufficient to choose $\alpha$ between `0.3..0.7`. However, it is still important to pay attention to how iterations are going and to intervene if necessary. Sometimes the behavior of iterations changes as they go, and an adjustment of $\alpha$ may be needed. Although simple damping stabilizes iterations, it is often too slow in practice because it may need over a hundred iterations to converge to the final solution. Moreover, sometimes for some systems the damping iterations stagnate and create and illusion of convergence.
 
-Subspace iterative methods can resolve limitations of damping replacing the simple mixing by an extrapolation. The subspace methods are based on extrapolation of vectors by a linear combination of vectors from some subspace:
+Subspace iterative methods can resolve limitations of damping replacing the simple mixing by an extrapolation. Such an extrapolation is done with a linear combination of vectors from some subspace:
 ```math
 v_{extr} = \sum_i c_i v_i,
 ```
@@ -41,7 +41,7 @@ In order to converge the extrapolated vectors $v_{extr}$ to $v^*$, the extrapola
 
 Within a given subspace, DIIS seeks to find such coefficients that $||e_{extr}||$ is minimized. Since in practice the error vectors (residuals) $e_i$ are not known, approximate residuals are used instead (see below). The minimization problem for coefficients can be reformulated in terms of the Lagrangian
 ```math
-L^{DIIS}(c,\lambda) = \frac{1}{2}\sum_ij c_i B_{ij} c_j - \lambda\left(1-\sum_i c_i \right),
+L^{DIIS}(c,\lambda) = 0.5\sum_ij c_i B_{ij} c_j - \lambda\left(1-\sum_i c_i \right),
 B_{ij} = \left<e_i, e_j \right)
 ```
 The necessary condition for a minimum found from direct differentiation of the Lagrangian is
