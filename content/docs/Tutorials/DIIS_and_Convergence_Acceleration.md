@@ -36,7 +36,7 @@ Subspace iterative methods can resolve limitations of damping replacing the simp
 ```math
 v_{extr} = \sum_i c_i v_i,
 ```
-where $v_i$ is the subspace vector, $c_i$ is the extrapolation coefficient (recomputed at every iteration), $v_{extr}$ is the result of the extrapolation. A specific subspace techniques (e.g., DIIS) finds the extrapolation coefficients automatically. Such an extrapolation scheme can be applied to any vectors. In our case, we define vectors $v$ as self-energies (with both static and dynamic parts). Every vector can be seen as a sum of the fixed-point vector (representing solution of the iterative process) and the error:
+where $v_i$ is the subspace vector, $c_i$ is the extrapolation coefficient (recomputed at every iteration), $v_{extr}$ is the result of the extrapolation. The specific subspace technique (e.g., DIIS) finds the extrapolation coefficients automatically. This extrapolation scheme can be applied to any vectors. In our case, we define vectors $v_i$ as self-energies (with both static and dynamic parts) computed from the Green's function $G_{i-1}$. Every vector can be seen as a sum of the fixed-point vector (representing solution of the iterative process) and the error:
 ```math
 v_i = v^* + e_i
 ```
