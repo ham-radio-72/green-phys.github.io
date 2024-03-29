@@ -32,8 +32,10 @@ v_i = v^* + e_i
 ```
 Thus, the vector extrapolation can be expressed as
 ```math
-v_{extr} = v^*\sum_i c_i + e_{extr}, \\\
-e_{extr} = \sum_i c_i e_i
+\begin{aligned}
+v_{extr} &= v^*\sum_i c_i + e_{extr}, \\
+e_{extr} &= \sum_i c_i e_i
+\end{aligned}
 ```
 In order to converge the extrapolated vectors $v_{extr}$ to $v^*$, the extrapolation coefficients must add up to one $\sum_i c_i = 1$. This condition is sometimes called as a DIIS constraint since it is directly used in the formulation of DIIS below.
 
