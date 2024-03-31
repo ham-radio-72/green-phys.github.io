@@ -24,6 +24,7 @@ icon: user-group
    - Original implementation of GW solver
    - SEET implementation
    - Implementation of relativistic effects
+   - Original DIIS implementation
 {{< /person >}}
 
 {{< person name="Jia Li"  title="Contribution" head="/headshots/jli.jpg" >}}
@@ -33,6 +34,7 @@ icon: user-group
 
 {{< person name="Pavel Pokhilko"  title="Contribution" head="/headshots/pokhilko.jpg" >}}
    - Two particle density matrices
+   - Original DIIS implementation
 {{< /person >}}
 
 {{< person name="Yang Yu" head="/headshots/umyangyu.jpg" />}}
