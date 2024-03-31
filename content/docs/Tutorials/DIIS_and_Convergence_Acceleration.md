@@ -20,6 +20,7 @@ The simplest algorithm is known as `damping`, or `simple mixing`. At a given ite
 $$
 \Sigma_i = \alpha\Sigma[G_{i-1}] + (1-\alpha)\Sigma_{i-1},
 $$
+
 where $\Sigma_i$ is the mixed self-energy used to find the Green's function at the new iteration, $\Sigma[G_{i-1}]$ is the computed self-energy from the previously found Green's function, and $\Sigma_{i-1}$ is the damped self-energy from the previous iteration. The mixing parameter $\alpha$ is chosen by the user. Thus, the self-consistency cycle becomes:
 initial guess &rarr; $\mu_1,G_1$ &rarr; $\Sigma[G_1]$ &rarr; mixed $\Sigma_1$ &rarr; $\mu_2,G_2$ &rarr; ...
 
@@ -32,32 +33,41 @@ The details of the subspace iterative algorithms that we have developed are in o
 <https://pubs.aip.org/aip/jcp/article/156/9/094101/2840744>
 
 Subspace iterative methods can resolve limitations of damping replacing the simple mixing by an extrapolation. Such an extrapolation is done with a linear combination of vectors from some subspace:
+
 $$
 v_{extr} = \sum_i c_i v_i,
 $$
+
 where $v_i$ is the subspace vector, $c_i$ is the extrapolation coefficient (recomputed at every iteration), $v_{extr}$ is the result of the extrapolation. The specific subspace technique (e.g., DIIS) finds the extrapolation coefficients automatically. This extrapolation scheme can be applied to any vectors. In our case, we define vectors $v_i$ as self-energies (with both static and dynamic parts) computed from the Green's function $G_{i-1}$. Every vector can be seen as a sum of the fixed-point vector (representing solution of the iterative process) and the error:
+
 $$
 v_i = v^* + e_i
 $$
+
 Thus, the vector extrapolation can be expressed as
+
 $$
 \begin{aligned}
 v_{extr} &= v^*\sum_i c_i + e_{extr}, \cr
 e_{extr} &= \sum_i c_i e_i
 \end{aligned}
 $$
+
 In order to converge the extrapolated vectors $v_{extr}$ to $v^*$, the extrapolation coefficients must add up to one $\sum_i c_i = 1$. This condition is sometimes called as a DIIS constraint since it is directly used in the formulation of DIIS below.
 
 **DIIS** (direct inversion in the iterative subspace) is the most common subspace convergence acceleration technique. While it was first developed to use for SCF, due to its generality, it has been also used to solve coupled-cluster amplitude equations as well as response equations. We implement the DIIS algorithm to accelerate iterations solving the Dyson equation. 
 
 Within a given subspace, DIIS seeks to find such coefficients that $||e_{extr}||$ is minimized. Since in practice the error vectors (residuals) $e_i$ are not known, approximate residuals are used instead (see below). The minimization problem for coefficients can be reformulated in terms of the Lagrangian
+
 $$
 \begin{aligned}
 L^{DIIS}(c,\lambda) &= \frac{1}{2}\sum_{ij} c_i B_{ij} c_j - \lambda \left(1-\sum_i c_i\right), \cr
 B_{ij} &= \braket{e_i, e_j}
 \end{aligned}
 $$
+
 The necessary condition for a minimum found from direct differentiation of the Lagrangian is
+
 $$
 \begin{pmatrix}
 \mathrm{Re}(B_{11}) & \cdots & \mathrm{Re}(B_{1n}) & 1 \cr
@@ -78,13 +88,17 @@ c_n \cr
 1
 \end{pmatrix}
 $$
+
 Solution of this system gives the extrapolation coefficients minimizing the norm of the extrapolated residual. While on paper this system looks simple, in practice it is badly conditioned. We implement preconditioning through partitioning giving a reliable solution to this system of equations. The found coefficients are always real. 
 
 We implemented two types of residuals: the difference residual and the commutator residual. The difference residual is defined as the difference between self-energies of the subsequent iterations:
+
 $$
 e_i^{diff} = \Sigma[G_{i-1}] - \Sigma[G_{i-2}]
 $$
+
 The commutator residual is defined as
+
 $$
 e_i^{comm}(i\omega) = [G_{i-1}(i\omega), G_0^{-1}(i\omega) - \Sigma[G_{i-1}](i\omega\) ]
 $$
