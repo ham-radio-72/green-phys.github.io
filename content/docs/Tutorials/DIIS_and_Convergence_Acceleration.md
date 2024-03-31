@@ -42,7 +42,7 @@ $$
 Thus, the vector extrapolation can be expressed as
 $$
 \begin{aligned}
-v_{extr} &= v^*\sum_i c_i + e_{extr} \cr
+v_{extr} &= v^*\sum_i c_i + e_{extr}, \cr
 e_{extr} &= \sum_i c_i e_i
 \end{aligned}
 $$
