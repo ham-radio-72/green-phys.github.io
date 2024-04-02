@@ -86,7 +86,7 @@ The following instructions will download and build the Many-Body Perturbation th
      -DGREEN_KERNEL_URL="https://github.com/Green-Phys/green-gpu"   \
      -DGREEN_CUSTOM_KERNEL_LIB="GREEN::GPU"                         \
      -DGREEN_CUSTOM_KERNEL_ENUM=GPU                                 \
-     -DGREEN_CUSTOM_KERNEL_HEADER=<green/gpu/gpu_factory.h>         \
+     -DGREEN_CUSTOM_KERNEL_HEADER="<green/gpu/gpu_factory.h>"       \
      -DCMAKE_INSTALL_PREFIX=/path/to/install/directory ../green-mbpt
   $ make -j 4 && make test
   ```
